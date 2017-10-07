@@ -9,6 +9,7 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{tikz}
+\usepackage{listings}
 
 \title{Graph Data - Modelling and Quering}
 \subtitle{with Neo4j and Cypher}
@@ -208,39 +209,132 @@
     \begin{frame}
         \frametitle{Use Cases}
         \begin{itemize}
-            \item Chemistry\\[2mm]
-            \begin{tikzpicture}
-            \node[draw, circle](pr) at (0,0){project};
-            \node[draw, circle](f1) at (4,0){f1.pdf};
-            \node[draw, circle](f2) at (8,0){f2.pdf};
-            \node[draw, circle](f3) at (0,3){f3.pdf};
-            \node[draw, circle](txt) at (6,3){f.txt};
-            \node[draw, circle](csv) at (8,3){f.csv};
-            \node[draw, circle](pt) at (3,6){patent};
-            \node[draw, circle](f) at (8,6){folder};
-            \path (f1) edge[->] node [above] {part of} (pr);
-            \path (f2) edge[->] node [above] {reference} (f1);
-            \path (f3) edge[->] node [sloped, above] {part of} (pr);
-            \path (f3) edge[->] node [sloped, above] {reference} (f1);
-            \path (f1) edge[->] node [sloped, above] {reference} (txt);
-            \path (f2) edge[->] node [sloped, above] {reference} (csv);
-            \path (pt) edge[->] node [sloped, above] {consists of} (f3);
-            \path (pt) edge[->] node [sloped, above] {consists of} (f);
-            \path (f) edge[->] node [sloped, above] {contains} (txt);
-            \path (f) edge[->] node [sloped, above] {contains} (csv);
-            \end{tikzpicture}
+            \item Biochemistry / Genomics\\[2mm]
+            \includegraphics[width=0.9\textwidth]{genomics.png}
         \end{itemize}
+        \footnotetext{\url{http://ctdbase.org/}}
     \end{frame}
         
     \section{Starting with Neo4j and Cypher}
     \subsection{Starting the database}
+    \begin{frame}
+        \frametitle{Installation}
+        \begin{itemize}
+            \item Find the right installation file for your OS at \url{neo4j-training-files/neo4j} on the flash drive and install the software.
+            \pause
+            \item Copy both JAR-files from the \url{neo4j-training-files/plugins} directory into \url{NEO4J_HOME/plugins} directory of your Neo4j installation.
+            \pause
+            \item Replace the \url{NEO4J_HOME/conf/neo4j.conf} configuration file with the one found on the flash drive at \url{neo4j-training-files/conf/neo4j.conf}.
+            \pause
+            \item Copy the \url{neo4j-training-files/data/odsc.db} folder into your \url{NEO4J_HOME/data/databases/} directory
+        \end{itemize}
+    \end{frame}
+    
+    \begin{frame}
+        \frametitle{Starting Neo4j}
+        \begin{itemize}
+            \item Start the database with\\
+            \url{NEO4J_HOME/bin/neo4j} \url{start}
+            \pause
+            \item Go to \url{http://localhost:7474} within you browser
+        \end{itemize}
+    \end{frame}
+    
     \subsection{Brief look at the configuration}
+    \begin{frame}
+        \frametitle{Demonstration}
+        \begin{block}{Important configuration entries}
+            dbms.active\_database=odsc.db\\
+            dbms.security.auth\_enabled=false\\
+            dbms.security.procedures.unrestricted=algo.*,apoc.*\\
+            apoc.import.file.enabled=true
+        \end{block}
+    \end{frame}
+    
     \subsection{CRUD operations with Cypher}
+    \subsection{Node operations}
+    \begin{frame}
+        \frametitle{Live coding session}
+        \begin{itemize}
+            \item create node\\
+            CREATE (c:Chemical \{name: 'Helium'\}) RETURN c
+            \item update node\\
+            MERGE (c:Chemical \{name: 'Helium'\}) SET c.symbol = 'He' RETURN c
+            \item delete node 
+            \begin{itemize}
+                \item without relations\\
+                MATCH (c:Chemical \{name:'Helium'\}) DELETE c\\
+                MATCH (c:Chemical)\\
+                \hspace{1cm} WHERE c.name = 'Helium'\\
+                \hspace{1cm} DELETE c
+                \item with existing relations\\
+                MATCH (c:Chemical \{name:'Helium'\})\\
+                \hspace{1cm} DETACH DELETE c\\
+            \end{itemize}
+        \end{itemize}
+    \end{frame}
+    
+    \subsection{Relation operations}
+    \begin{frame}
+        \frametitle{Live coding session}
+        \begin{itemize}
+            \item create relation\\
+            \begin{itemize}
+                \item between new nodes\\
+                CREATE (c:Chemical {chemicalName:'Helium'})-[:BELONGS\_TO]->(g:ChemicalGroup {groupName:'Noble gases'}) RETURN c,g
+                \item between existing nodes\\
+                MATCH (g:ChemicalGroup {groupName:'Noble gases'}), (p:ChemicalGroup {groupName:'Gases'})
+                CREATE (g)-[:HAS\_PARENT]->(p) RETURN g,p
+            \end{itemize}
+            \item update relation\\
+            MATCH ()-[r:BELONGS\_TO]-() SET r.updateTime = timestamp() RETURN r\\
+            \item delete relation\\
+            MATCH ()-[r:BELONGS\_TO]-() DELETE r
+        \end{itemize}
+    \end{frame}
     
     \section{Quering for paths and patterns}
+    \begin{frame}
+        \frametitle{Live coding session}
+        Examples:
+        \begin{itemize}
+            \item MATCH (g:Gene) WHERE g.geneSymbol = 'CTSD' RETURN g
+            \item MATCH (g:Gene)<-[:ASSOCIATED\_WITH]-(d:Disease) WHERE g.geneSymbol = 'CTSD' RETURN g, d
+            \item MATCH (g:Gene)<-[:ASSOCIATED\_WITH]-(d:Disease) WHERE g.geneSymbol = 'CTSD' RETURN g, count(d)
+            \item MATCH (g:Gene)<-[:ASSOCIATED\_WITH]-(d:Disease) WITH g, count(d) as diseases WHERE diseases > 50 RETURN g.geneName, g.geneSymbol, diseases ORDER BY diseases DESC\\
+            \item MATCH (g:Gene)<-[:ASSOCIATED\_WITH]-(d:Disease)-[:ASSOCIATED\_WITH]-(otherGene:Gene) WHERE g.geneSymbol = 'CTSD' AND d.diseaseName = 'Osteoarthritis' RETURN otherGene.geneName, otherGene.geneSymbol
+        \end{itemize}
+    \end{frame}
+    
+    \begin{frame}
+        \frametitle{Live coding session}
+        \begin{itemize}
+            \item MATCH p = (c:Chemical)-[*2]-(d:Disease) where d.diseaseName STARTS WITH 'Osteo' RETURN p LIMIT 20
+        \end{itemize}
+    \end{frame}
     
     \section{Using graph algorithms}
+    \begin{frame}
+        \frametitle{Calling procedures}
+        \begin{itemize}
+            \item CALL db.schema
+            \item CALL dbms.procedures
+            \item call dbms.functions
+            \item CALL apoc.help('dijkstra')
+        \end{itemize}
+    \end{frame}
+    
     \subsection{apoc library}
+    \begin{frame}
+        \frametitle{Live coding session}
+        \begin{block}{Example}
+            MATCH (c:Chemical) WHERE c.chemicalName = 'Zinc Acetate'
+            MATCH (d:Disease) WHERE d.diseaseName = 'Alzheimer Disease' 
+            MATCH p = (c)-[*1..3]-(d)
+            RETURN p LIMIT 20
+        \end{block}
+    \end{frame}
+    
     \subsection{algo library}
     
     \section{Importing data}

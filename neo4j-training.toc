@@ -4,3 +4,12 @@
 \beamer@subsectionintoc {1}{1}{Definition}{4}{0}{1}
 \beamer@subsectionintoc {1}{2}{Typical use cases}{6}{0}{1}
 \beamer@subsectionintoc {1}{3}{Not so typical use cases}{10}{0}{1}
+\beamer@sectionintoc {2}{Starting with Neo4j and Cypher}{13}{0}{2}
+\beamer@subsectionintoc {2}{1}{Starting the database}{13}{0}{2}
+\beamer@subsectionintoc {2}{2}{Brief look at the configuration}{19}{0}{2}
+\beamer@subsectionintoc {2}{3}{CRUD operations with Cypher}{20}{0}{2}
+\beamer@subsectionintoc {2}{4}{Node operations}{20}{0}{2}
+\beamer@subsectionintoc {2}{5}{Relation operations}{21}{0}{2}
+\beamer@sectionintoc {3}{Quering for paths and patterns}{22}{0}{3}
+\beamer@sectionintoc {4}{Using graph algorithms}{24}{0}{4}
+\beamer@subsectionintoc {4}{1}{apoc library}{25}{0}{4}

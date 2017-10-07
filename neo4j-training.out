@@ -2,3 +2,12 @@
 \BOOKMARK [3][]{Outline0.1.1.4}{Definition}{Outline0.1}% 2
 \BOOKMARK [3][]{Outline0.1.2.6}{Typical use cases}{Outline0.1}% 3
 \BOOKMARK [3][]{Outline0.1.3.10}{Not so typical use cases}{Outline0.1}% 4
+\BOOKMARK [2][]{Outline0.2}{Starting with Neo4j and Cypher}{}% 5
+\BOOKMARK [3][]{Outline0.2.1.13}{Starting the database}{Outline0.2}% 6
+\BOOKMARK [3][]{Outline0.2.2.19}{Brief look at the configuration}{Outline0.2}% 7
+\BOOKMARK [3][]{Outline0.2.3.20}{CRUD operations with Cypher}{Outline0.2}% 8
+\BOOKMARK [3][]{Outline0.2.4.20}{Node operations}{Outline0.2}% 9
+\BOOKMARK [3][]{Outline0.2.5.21}{Relation operations}{Outline0.2}% 10
+\BOOKMARK [2][]{Outline0.3}{Quering for paths and patterns}{}% 11
+\BOOKMARK [2][]{Outline0.4}{Using graph algorithms}{}% 12
+\BOOKMARK [3][]{Outline0.4.1.25}{apoc library}{Outline0.4}% 13
