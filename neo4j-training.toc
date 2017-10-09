@@ -10,11 +10,12 @@
 \beamer@subsectionintoc {2}{3}{CRUD operations with Cypher}{20}{0}{2}
 \beamer@subsectionintoc {2}{4}{Node operations}{20}{0}{2}
 \beamer@subsectionintoc {2}{5}{Relation operations}{21}{0}{2}
-\beamer@sectionintoc {3}{Quering for paths and patterns}{22}{0}{3}
-\beamer@sectionintoc {4}{Using graph algorithms}{24}{0}{4}
-\beamer@subsectionintoc {4}{1}{apoc library}{25}{0}{4}
-\beamer@subsectionintoc {4}{2}{algo library}{27}{0}{4}
-\beamer@sectionintoc {5}{Importing data}{28}{0}{5}
-\beamer@subsectionintoc {5}{1}{Basic loading command}{28}{0}{5}
-\beamer@subsectionintoc {5}{2}{Performance issues and dealing with big data}{28}{0}{5}
-\beamer@sectionintoc {6}{Refactoring graph data model}{28}{0}{6}
+\beamer@sectionintoc {3}{Indexes}{22}{0}{3}
+\beamer@sectionintoc {4}{Quering for paths and patterns}{23}{0}{4}
+\beamer@sectionintoc {5}{Using graph algorithms}{26}{0}{5}
+\beamer@subsectionintoc {5}{1}{apoc library}{27}{0}{5}
+\beamer@subsectionintoc {5}{2}{algo library}{30}{0}{5}
+\beamer@sectionintoc {6}{Importing data}{31}{0}{6}
+\beamer@subsectionintoc {6}{1}{Basic loading command}{31}{0}{6}
+\beamer@subsectionintoc {6}{2}{Performance issues and dealing with big data}{31}{0}{6}
+\beamer@sectionintoc {7}{Refactoring graph data model}{31}{0}{7}

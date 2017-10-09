@@ -293,6 +293,11 @@
         \end{itemize}
     \end{frame}
     
+    \section{Indexes}
+    \begin{frame}{Indexes}
+        CREATE INDEX ON :Gene(geneName, geneSymbol)
+    \end{frame}
+    
     \section{Quering for paths and patterns}
     \begin{frame}
         \frametitle{Live coding session}
@@ -317,10 +322,24 @@
             MATCH (d:Disease) WHERE d.diseaseName = 'Alzheimer Disease' 
             MATCH p = (c)-[*1..3]-(d)
             RETURN p LIMIT 20
-            \item MATCH (c:Chemical {chemicalName:'Zinc Acetate'}), (d:Disease {diseaseName:'Alzheimer Disease'})
+            \item
+            MATCH (type:InteractionType {typeName:'degradation'})<-[:INCREASES|:DECREASES]-(i:Interaction)-[:APPLIES_TO]->(o:Organism {organismName:'Cricetulus griseus'}) RETURN i.description
+        \end{itemize}
+    \end{frame}
+    
+    \begin{frame}{Live coding session}
+        \begin{block}{Shortest path}
+            MATCH (zinc:Chemical {chemicalName:'Zinc Acetate'}),(metals:Chemical {chemicalName:'Metals, Heavy'}), p = shortestPath((zinc)-[*..15]-(metals))
+            RETURN p\\
+            
+            MATCH (zinc:Chemical {chemicalName:'Zinc Acetate'}),(metals:Chemical {chemicalName:'Metals, Heavy'}), p = shortestPath((zinc)-[*..15]-(metals)) 
+            WHERE NONE (r IN relationships(p) WHERE type(r)= 'CAUSES')
+            RETURN p\\
+            
+            MATCH (c:Chemical {chemicalName:'Zinc Acetate'}), (d:Disease {diseaseName:'Alzheimer Disease'})
             MATCH path = allShortestPaths( (c)-[*..3]-(d) )
             RETURN path
-        \end{itemize}
+        \end{block}
     \end{frame}
     
     \section{Using graph algorithms}
@@ -367,6 +386,13 @@
         \footnotetext{\url{en.wikipedia.org/wiki/Centrality\#Betweenness_centrality}}
     \end{frame}
     
+    \begin{frame}
+        \frametitle{Live coding session}
+        MATCH (startNode:Category {name:'Endocrine system disease'})
+        CALL apoc.algo.cliquesWithNode(startNode, 4) YIELD clique
+        RETURN clique
+    \end{frame}
+    
     \subsection{algo library}
     \begin{frame}
         \frametitle{Live coding session}
@@ -374,6 +400,16 @@
             call algo.pageRank.stream('InteractionType', 'HAS\_PARENT',{iterations:20}) YIELD node, score
             WITH * ORDER BY score DESC LIMIT 5
             RETURN node.typeName, node.code, score;
+        \end{block}
+        \begin{block}{Partitioning into connected components}
+            CALL algo.unionFind('InteractionType', 'HAS\_PARENT', {write:true, partitionProperty:"partition"})
+            YIELD nodes, setCount, loadMillis, computeMillis, writeMillis
+        \end{block}
+        \begin{block}{Closeness}%TODO
+            CALL algo.closeness('Chemical', 'HAS\_PARENT', {write:true, writeProperty:'centrality'})
+            YIELD nodes,loadMillis, computeMillis, writeMillis\\
+            
+            match (c:Chemical) where c.centrality > 200 return c.chemicalName, c.centrality order by c.centrality desc limit 10
         \end{block}
     \end{frame}
     

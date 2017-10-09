@@ -8,11 +8,12 @@
 \BOOKMARK [3][]{Outline0.2.3.20}{CRUD operations with Cypher}{Outline0.2}% 8
 \BOOKMARK [3][]{Outline0.2.4.20}{Node operations}{Outline0.2}% 9
 \BOOKMARK [3][]{Outline0.2.5.21}{Relation operations}{Outline0.2}% 10
-\BOOKMARK [2][]{Outline0.3}{Quering for paths and patterns}{}% 11
-\BOOKMARK [2][]{Outline0.4}{Using graph algorithms}{}% 12
-\BOOKMARK [3][]{Outline0.4.1.25}{apoc library}{Outline0.4}% 13
-\BOOKMARK [3][]{Outline0.4.2.27}{algo library}{Outline0.4}% 14
-\BOOKMARK [2][]{Outline0.5}{Importing data}{}% 15
-\BOOKMARK [3][]{Outline0.5.1.28}{Basic loading command}{Outline0.5}% 16
-\BOOKMARK [3][]{Outline0.5.2.28}{Performance issues and dealing with big data}{Outline0.5}% 17
-\BOOKMARK [2][]{Outline0.6}{Refactoring graph data model}{}% 18
+\BOOKMARK [2][]{Outline0.3}{Indexes}{}% 11
+\BOOKMARK [2][]{Outline0.4}{Quering for paths and patterns}{}% 12
+\BOOKMARK [2][]{Outline0.5}{Using graph algorithms}{}% 13
+\BOOKMARK [3][]{Outline0.5.1.27}{apoc library}{Outline0.5}% 14
+\BOOKMARK [3][]{Outline0.5.2.30}{algo library}{Outline0.5}% 15
+\BOOKMARK [2][]{Outline0.6}{Importing data}{}% 16
+\BOOKMARK [3][]{Outline0.6.1.31}{Basic loading command}{Outline0.6}% 17
+\BOOKMARK [3][]{Outline0.6.2.31}{Performance issues and dealing with big data}{Outline0.6}% 18
+\BOOKMARK [2][]{Outline0.7}{Refactoring graph data model}{}% 19
