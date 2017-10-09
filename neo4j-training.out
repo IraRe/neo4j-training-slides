@@ -11,3 +11,8 @@
 \BOOKMARK [2][]{Outline0.3}{Quering for paths and patterns}{}% 11
 \BOOKMARK [2][]{Outline0.4}{Using graph algorithms}{}% 12
 \BOOKMARK [3][]{Outline0.4.1.25}{apoc library}{Outline0.4}% 13
+\BOOKMARK [3][]{Outline0.4.2.27}{algo library}{Outline0.4}% 14
+\BOOKMARK [2][]{Outline0.5}{Importing data}{}% 15
+\BOOKMARK [3][]{Outline0.5.1.28}{Basic loading command}{Outline0.5}% 16
+\BOOKMARK [3][]{Outline0.5.2.28}{Performance issues and dealing with big data}{Outline0.5}% 17
+\BOOKMARK [2][]{Outline0.6}{Refactoring graph data model}{}% 18

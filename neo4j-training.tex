@@ -317,6 +317,9 @@
             MATCH (d:Disease) WHERE d.diseaseName = 'Alzheimer Disease' 
             MATCH p = (c)-[*1..3]-(d)
             RETURN p LIMIT 20
+            \item MATCH (c:Chemical {chemicalName:'Zinc Acetate'}), (d:Disease {diseaseName:'Alzheimer Disease'})
+            MATCH path = allShortestPaths( (c)-[*..3]-(d) )
+            RETURN path
         \end{itemize}
     \end{frame}
     
@@ -357,7 +360,7 @@
             MATCH (node:Disease)
             WHERE node.diseaseName CONTAINS 'deficiency'
             WITH collect(node) AS nodes
-            CALL apoc.algo.betweenness(['HAS_PARENT'],nodes,'BOTH') YIELD node, score
+            CALL apoc.algo.betweenness(['HAS\_PARENT'],nodes,'BOTH') YIELD node, score
             RETURN node.diseaseName, score
             ORDER BY score DESC LIMIT 10
         \end{block}

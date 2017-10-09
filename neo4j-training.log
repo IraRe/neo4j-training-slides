@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.5.23)  8 OCT 2017 17:10
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.5.23)  9 OCT 2017 08:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1325,7 +1325,7 @@ line 36.
 File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 )
-<background.png, id=65, 963.6pt x 722.7pt>
+<background.png, id=85, 963.6pt x 722.7pt>
 File: background.png Graphic file (type png)
  <use background.png>
 Package pdftex.def Info: background.png used on input line 36.
@@ -1335,7 +1335,7 @@ Package pdftex.def Info: background.png used on input line 36.
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
 (Font)              size <5> substituted on input line 36.
 
-<logo.png, id=66, 2403.98125pt x 588.1975pt>
+<logo.png, id=86, 2403.98125pt x 588.1975pt>
 File: logo.png Graphic file (type png)
  <use logo.png>
 Package pdftex.def Info: logo.png used on input line 36.
@@ -1344,7 +1344,7 @@ Package pdftex.def Info: logo.png used on input line 36.
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./background.png (PNG copy
 )> <./logo.png>]
-<pd_logo.png, id=104, 693.5511pt x 116.8365pt>
+<pd_logo.png, id=124, 693.5511pt x 116.8365pt>
 File: pd_logo.png Graphic file (type png)
  <use pd_logo.png>
 Package pdftex.def Info: pd_logo.png used on input line 38.
@@ -1361,8 +1361,10 @@ Package pdftex.def Info: logo.png used on input line 38.
  [2
 
  <./pd_logo.png>] (./neo4j-training.toc)
-File: background.png Graphic file (type png)
+Overfull \vbox (14.50742pt too high) detected at line 43
+ []
 
+File: background.png Graphic file (type png)
 <use background.png>
 Package pdftex.def Info: background.png used on input line 43.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
@@ -1465,7 +1467,7 @@ Package pdftex.def Info: logo.png used on input line 207.
 (pdftex.def)             Requested size: 81.3968pt x 19.91684pt.
  [11
 
-] <genomics.png, id=384, 785.93625pt x 350.81062pt>
+] <genomics.png, id=411, 785.93625pt x 350.81062pt>
 File: genomics.png Graphic file (type png)
 
 <use genomics.png>
@@ -1608,23 +1610,23 @@ Package pdftex.def Info: logo.png used on input line 307.
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 321.
+Package pdftex.def Info: background.png used on input line 324.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
 File: logo.png Graphic file (type png)
 
 <use logo.png>
-Package pdftex.def Info: logo.png used on input line 321.
+Package pdftex.def Info: logo.png used on input line 324.
 (pdftex.def)             Requested size: 81.3968pt x 19.91684pt.
  [23
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 332.
+Package pdftex.def Info: background.png used on input line 335.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
 File: logo.png Graphic file (type png)
  <use logo.png>
-Package pdftex.def Info: logo.png used on input line 332.
+Package pdftex.def Info: logo.png used on input line 335.
 (pdftex.def)             Requested size: 81.3968pt x 19.91684pt.
  [24
 
@@ -1632,13 +1634,48 @@ Package pdftex.def Info: logo.png used on input line 332.
 File: background.png Graphic file (type png)
 
 <use background.png>
-Package pdftex.def Info: background.png used on input line 349.
+Package pdftex.def Info: background.png used on input line 352.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
 File: logo.png Graphic file (type png)
  <use logo.png>
-Package pdftex.def Info: logo.png used on input line 349.
+Package pdftex.def Info: logo.png used on input line 352.
 (pdftex.def)             Requested size: 81.3968pt x 19.91684pt.
  [25
+
+]
+File: background.png Graphic file (type png)
+ <use background.png>
+Package pdftex.def Info: background.png used on input line 368.
+(pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
+File: logo.png Graphic file (type png)
+ <use logo.png>
+Package pdftex.def Info: logo.png used on input line 368.
+(pdftex.def)             Requested size: 81.3968pt x 19.91684pt.
+
+[26
+
+]
+File: background.png Graphic file (type png)
+ <use background.png>
+Package pdftex.def Info: background.png used on input line 378.
+(pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
+File: logo.png Graphic file (type png)
+ <use logo.png>
+Package pdftex.def Info: logo.png used on input line 378.
+(pdftex.def)             Requested size: 81.3968pt x 19.91684pt.
+ [27
+
+]
+File: background.png Graphic file (type png)
+ <use background.png>
+Package pdftex.def Info: background.png used on input line 398.
+(pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
+File: logo.png Graphic file (type png)
+
+<use logo.png>
+Package pdftex.def Info: logo.png used on input line 398.
+(pdftex.def)             Requested size: 81.3968pt x 19.91684pt.
+ [28
 
 ]
 \tf@nav=\write6
@@ -1650,13 +1687,13 @@ Package pdftex.def Info: logo.png used on input line 349.
 \tf@snm=\write8
 \openout8 = `neo4j-training.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 360.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 360.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 400.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 400.
  (./neo4j-training.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 360.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 360.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 400.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 400.
 Package rerunfilecheck Info: File `neo4j-training.out' has not changed.
-(rerunfilecheck)             Checksum: DC49419C89D83BEDA21EB94FF05073E5;866.
+(rerunfilecheck)             Checksum: AEB458ACCC86896B3759312D1C1F680E;1210.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -1665,13 +1702,13 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 360.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 400.
  ) 
 Here is how much of TeX's memory you used:
- 21982 strings out of 493029
- 419907 string characters out of 6136234
- 505265 words of memory out of 5000000
- 24962 multiletter control sequences out of 15000+600000
+ 22016 strings out of 493029
+ 420248 string characters out of 6136234
+ 505759 words of memory out of 5000000
+ 24985 multiletter control sequences out of 15000+600000
  15450 words of font info for 57 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,14n,59p,412b,957s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1686,10 +1723,10 @@ e1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/am
 sfonts/symbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/ams
 fonts/symbols/msam7.pfb>
-Output written on neo4j-training.pdf (25 pages, 479431 bytes).
+Output written on neo4j-training.pdf (28 pages, 486378 bytes).
 PDF statistics:
- 826 PDF objects out of 1000 (max. 8388607)
- 768 compressed objects within 8 object streams
- 64 named destinations out of 1000 (max. 500000)
- 167 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 930 PDF objects out of 1000 (max. 8388607)
+ 868 compressed objects within 9 object streams
+ 75 named destinations out of 1000 (max. 500000)
+ 207 words of extra memory for PDF output out of 10000 (max. 10000000)
 
