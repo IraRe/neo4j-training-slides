@@ -11,39 +11,35 @@
 \headcommand {\beamer@subsectionentry {0}{1}{1}{4}{Definition}}\headcommand {\beamer@subsectionpages {4}{3}}
 \headcommand {\slideentry {1}{1}{1}{4/5}{Definition}{0}}
 \headcommand {\beamer@framepages {4}{5}}
-\headcommand {\beamer@subsectionentry {0}{1}{2}{6}{Typical use cases}}\headcommand {\beamer@subsectionpages {4}{5}}
-\headcommand {\slideentry {1}{2}{1}{6/8}{Typical use cases}{0}}
+\headcommand {\beamer@subsectionentry {0}{1}{2}{6}{Use cases}}\headcommand {\beamer@subsectionpages {4}{5}}
+\headcommand {\slideentry {1}{2}{1}{6/8}{Use cases}{0}}
 \headcommand {\beamer@framepages {6}{8}}
-\headcommand {\slideentry {1}{2}{2}{9/9}{Typical use cases}{0}}
+\headcommand {\slideentry {1}{2}{2}{9/9}{Use cases}{0}}
 \headcommand {\beamer@framepages {9}{9}}
-\headcommand {\beamer@subsectionentry {0}{1}{3}{10}{Not so typical use cases}}\headcommand {\beamer@subsectionpages {6}{9}}
-\headcommand {\slideentry {1}{3}{1}{10/10}{Not so typical use cases}{0}}
+\headcommand {\slideentry {1}{2}{3}{10/10}{Use cases}{0}}
 \headcommand {\beamer@framepages {10}{10}}
-\headcommand {\slideentry {1}{3}{2}{11/11}{Not so typical use cases}{0}}
+\headcommand {\slideentry {1}{2}{4}{11/11}{Use cases}{0}}
 \headcommand {\beamer@framepages {11}{11}}
-\headcommand {\slideentry {1}{3}{3}{12/12}{Not so typical use cases}{0}}
+\headcommand {\slideentry {1}{2}{5}{12/12}{Use cases}{0}}
 \headcommand {\beamer@framepages {12}{12}}
 \headcommand {\sectionentry {2}{Starting with Neo4j and Cypher}{13}{Starting with Neo4j and Cypher}{0}}
 \headcommand {\beamer@sectionpages {4}{12}}
-\headcommand {\beamer@subsectionpages {10}{12}}
-\headcommand {\beamer@subsectionentry {0}{2}{1}{13}{Starting the database}}\headcommand {\beamer@subsectionpages {13}{12}}
-\headcommand {\slideentry {2}{1}{1}{13/16}{Starting the database}{0}}
+\headcommand {\beamer@subsectionpages {6}{12}}
+\headcommand {\beamer@subsectionentry {0}{2}{1}{13}{Configuration and start}}\headcommand {\beamer@subsectionpages {13}{12}}
+\headcommand {\slideentry {2}{1}{1}{13/16}{Configuration and start}{0}}
 \headcommand {\beamer@framepages {13}{16}}
-\headcommand {\slideentry {2}{1}{2}{17/18}{Starting the database}{0}}
+\headcommand {\slideentry {2}{1}{2}{17/18}{Configuration and start}{0}}
 \headcommand {\beamer@framepages {17}{18}}
-\headcommand {\beamer@subsectionentry {0}{2}{2}{19}{Brief look at the configuration}}\headcommand {\beamer@subsectionpages {13}{18}}
-\headcommand {\slideentry {2}{2}{1}{19/19}{Brief look at the configuration}{0}}
+\headcommand {\slideentry {2}{1}{3}{19/19}{Configuration and start}{0}}
 \headcommand {\beamer@framepages {19}{19}}
-\headcommand {\beamer@subsectionentry {0}{2}{3}{20}{CRUD operations with Cypher}}\headcommand {\beamer@subsectionpages {19}{19}}
-\headcommand {\beamer@subsectionentry {0}{2}{4}{20}{Node operations}}\headcommand {\beamer@subsectionpages {20}{19}}
-\headcommand {\slideentry {2}{4}{1}{20/20}{Node operations}{0}}
+\headcommand {\beamer@subsectionentry {0}{2}{2}{20}{CRUD operations with Cypher}}\headcommand {\beamer@subsectionpages {13}{19}}
+\headcommand {\slideentry {2}{2}{1}{20/20}{CRUD operations with Cypher}{0}}
 \headcommand {\beamer@framepages {20}{20}}
-\headcommand {\beamer@subsectionentry {0}{2}{5}{21}{Relation operations}}\headcommand {\beamer@subsectionpages {20}{20}}
-\headcommand {\slideentry {2}{5}{1}{21/21}{Relation operations}{0}}
+\headcommand {\slideentry {2}{2}{2}{21/21}{CRUD operations with Cypher}{0}}
 \headcommand {\beamer@framepages {21}{21}}
 \headcommand {\sectionentry {3}{Indexes}{22}{Indexes}{0}}
 \headcommand {\beamer@sectionpages {13}{21}}
-\headcommand {\beamer@subsectionpages {21}{21}}
+\headcommand {\beamer@subsectionpages {20}{21}}
 \headcommand {\slideentry {3}{0}{1}{22/22}{}{0}}
 \headcommand {\beamer@framepages {22}{22}}
 \headcommand {\sectionentry {4}{Quering for paths and patterns}{23}{Quering for paths and patterns}{0}}
@@ -73,15 +69,17 @@
 \headcommand {\sectionentry {6}{Importing data}{31}{Importing data}{0}}
 \headcommand {\beamer@sectionpages {26}{30}}
 \headcommand {\beamer@subsectionpages {30}{30}}
-\headcommand {\beamer@subsectionentry {0}{6}{1}{31}{Basic loading command}}\headcommand {\beamer@subsectionpages {31}{30}}
-\headcommand {\beamer@subsectionentry {0}{6}{2}{31}{Performance issues and dealing with big data}}\headcommand {\beamer@subsectionpages {31}{30}}
-\headcommand {\sectionentry {7}{Refactoring graph data model}{31}{Refactoring graph data model}{0}}
-\headcommand {\beamer@sectionpages {31}{30}}
-\headcommand {\beamer@subsectionpages {31}{30}}
-\headcommand {\slideentry {7}{0}{1}{31/31}{}{0}}
+\headcommand {\slideentry {6}{0}{1}{31/31}{}{0}}
 \headcommand {\beamer@framepages {31}{31}}
-\headcommand {\beamer@partpages {1}{31}}
-\headcommand {\beamer@subsectionpages {31}{31}}
-\headcommand {\beamer@sectionpages {31}{31}}
-\headcommand {\beamer@documentpages {31}}
-\headcommand {\def \inserttotalframenumber {24}}
+\headcommand {\slideentry {6}{0}{2}{32/32}{}{0}}
+\headcommand {\beamer@framepages {32}{32}}
+\headcommand {\sectionentry {7}{Refactoring graph data model}{33}{Refactoring graph data model}{0}}
+\headcommand {\beamer@sectionpages {31}{32}}
+\headcommand {\beamer@subsectionpages {31}{32}}
+\headcommand {\slideentry {7}{0}{1}{33/33}{}{0}}
+\headcommand {\beamer@framepages {33}{33}}
+\headcommand {\beamer@partpages {1}{33}}
+\headcommand {\beamer@subsectionpages {33}{33}}
+\headcommand {\beamer@sectionpages {33}{33}}
+\headcommand {\beamer@documentpages {33}}
+\headcommand {\def \inserttotalframenumber {26}}

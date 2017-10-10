@@ -10,6 +10,7 @@
 \usepackage{graphicx}
 \usepackage{tikz}
 \usepackage{listings}
+\usepackage{pgfplots}
 
 \title{Graph Data - Modelling and Quering}
 \subtitle{with Neo4j and Cypher}
@@ -38,7 +39,7 @@
     \maketitle
     
     \begin{frame}
-        \frametitle{Agenda}
+        \frametitle{Learning goals}
         \tableofcontents
     \end{frame}
     
@@ -99,7 +100,7 @@
         \footnotetext{\url{en.wikipedia.org/wiki/Graph_(discrete_mathematics)}}
     \end{frame}
     
-    \subsection{Typical use cases}
+    \subsection{Use cases}
     \begin{frame}
         \frametitle{Use Cases}
         \begin{itemize}
@@ -149,6 +150,9 @@
                 \path (m4) edge node [pos=0.5, sloped, above, blue] {Piccadilly} (m5);
                 \path (m1) edge node [pos=0.5, sloped, above, brown] {Bakerloo} (m5);
                 \path (m2) edge node [pos=0.5, sloped, above] {Northern} (m4);
+                
+                \addlegendentry{Style 1}
+                \addlegendentry{Style 2}
                 \end{tikzpicture}\\
                 OC = Oxford Circus\\
                 TC = Tottenham Court Road\\
@@ -159,7 +163,6 @@
         \end{itemize}
     \end{frame}
     
-    \subsection{Not so typical use cases}
     \begin{frame}
         \frametitle{Use Cases}
         \begin{itemize}
@@ -216,7 +219,7 @@
     \end{frame}
         
     \section{Starting with Neo4j and Cypher}
-    \subsection{Starting the database}
+    \subsection{Configuration and start}
     \begin{frame}
         \frametitle{Installation}
         \begin{itemize}
@@ -240,7 +243,6 @@
         \end{itemize}
     \end{frame}
     
-    \subsection{Brief look at the configuration}
     \begin{frame}
         \frametitle{Demonstration}
         \begin{block}{Important configuration entries}
@@ -252,7 +254,6 @@
     \end{frame}
     
     \subsection{CRUD operations with Cypher}
-    \subsection{Node operations}
     \begin{frame}
         \frametitle{Live coding session}
         \begin{itemize}
@@ -274,7 +275,6 @@
         \end{itemize}
     \end{frame}
     
-    \subsection{Relation operations}
     \begin{frame}
         \frametitle{Live coding session}
         \begin{itemize}
@@ -323,7 +323,7 @@
             MATCH p = (c)-[*1..3]-(d)
             RETURN p LIMIT 20
             \item
-            MATCH (type:InteractionType {typeName:'degradation'})<-[:INCREASES|:DECREASES]-(i:Interaction)-[:APPLIES_TO]->(o:Organism {organismName:'Cricetulus griseus'}) RETURN i.description
+            MATCH (type:InteractionType {typeName:'degradation'})<-[:INCREASES|:DECREASES]-(i:Interaction)-[:APPLIES\_TO]->(o:Organism {organismName:'Cricetulus griseus'}) RETURN i.description
         \end{itemize}
     \end{frame}
     
@@ -414,8 +414,41 @@
     \end{frame}
     
     \section{Importing data}
-    \subsection{Basic loading command}
-    \subsection{Performance issues and dealing with big data}
+    \begin{frame}
+        \frametitle{LOAD CSV}
+        USING PERIODIC COMMIT 500
+        LOAD CSV WITH HEADERS FROM "file:///neo4j-training-files/data/CTD/CTD\_Disease-GO\_biological\_process\_associations.csv" AS line
+        RETURN line LIMIT 10\\
+        
+        USING PERIODIC COMMIT 500
+        LOAD CSV WITH HEADERS FROM "file:///neo4j-training-files/data/CTD/CTD\_Disease-GO\_biological\_process\_associations.csv" AS line LIMIT 20
+        MATCH (d:Disease) WHERE last(split(d.diseaseID,':')) = line.DiseaseID 
+        MERGE (b:BiologicalProcess {goid:line.GOID}) SET b.goName = line.GOName
+        MERGE (b)<-[:AFFECTED\_BY {inferenceGeneQty:line.InferenceGeneQty, inferenceGeneSymbols:line.InferenceGeneSymbols}]-(d)
+    \end{frame}
+
+    \begin{frame}{apoc.load.csv}
+        CALL apoc.load.csv(
+        'file:///neo4j-training-files/data/CTD/CTD\_chem\_go\_enriched.csv',
+        {})
+        YIELD lineNo, map AS line RETURN lineNo, line limit 5\\
+        
+        CALL apoc.periodic.iterate(
+        "CALL apoc.load.csv(
+        'file:///neo4j-training-files/data/CTD/CTD\_chem\_go\_enriched.csv',
+        {})
+        YIELD lineNo, map AS line RETURN lineNo, line",
+        "MATCH (c:Chemical {chemicalID : line.ChemicalID})
+        MERGE (o:Ontology {name : line.Ontology})
+        MERGE (t:Term {termID : line.GOTermID})
+        SET t.termName = line.GOTermName
+        SET t.level = line.HighestGOLevel
+        MERGE (c)<-[r:AFFECTED\_BY]-(t)-[:TERM\_OF]->(o)
+        SET r.pValue = line.PValue
+        SET r.correctedPValue = line.CorrectedPValue",
+        {batchSize:10000, iterateList:true}
+        )
+    \end{frame}
     
     
     \section{Refactoring graph data model}

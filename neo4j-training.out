@@ -1,19 +1,13 @@
 \BOOKMARK [2][]{Outline0.1}{What are graphs?}{}% 1
 \BOOKMARK [3][]{Outline0.1.1.4}{Definition}{Outline0.1}% 2
-\BOOKMARK [3][]{Outline0.1.2.6}{Typical use cases}{Outline0.1}% 3
-\BOOKMARK [3][]{Outline0.1.3.10}{Not so typical use cases}{Outline0.1}% 4
-\BOOKMARK [2][]{Outline0.2}{Starting with Neo4j and Cypher}{}% 5
-\BOOKMARK [3][]{Outline0.2.1.13}{Starting the database}{Outline0.2}% 6
-\BOOKMARK [3][]{Outline0.2.2.19}{Brief look at the configuration}{Outline0.2}% 7
-\BOOKMARK [3][]{Outline0.2.3.20}{CRUD operations with Cypher}{Outline0.2}% 8
-\BOOKMARK [3][]{Outline0.2.4.20}{Node operations}{Outline0.2}% 9
-\BOOKMARK [3][]{Outline0.2.5.21}{Relation operations}{Outline0.2}% 10
-\BOOKMARK [2][]{Outline0.3}{Indexes}{}% 11
-\BOOKMARK [2][]{Outline0.4}{Quering for paths and patterns}{}% 12
-\BOOKMARK [2][]{Outline0.5}{Using graph algorithms}{}% 13
-\BOOKMARK [3][]{Outline0.5.1.27}{apoc library}{Outline0.5}% 14
-\BOOKMARK [3][]{Outline0.5.2.30}{algo library}{Outline0.5}% 15
-\BOOKMARK [2][]{Outline0.6}{Importing data}{}% 16
-\BOOKMARK [3][]{Outline0.6.1.31}{Basic loading command}{Outline0.6}% 17
-\BOOKMARK [3][]{Outline0.6.2.31}{Performance issues and dealing with big data}{Outline0.6}% 18
-\BOOKMARK [2][]{Outline0.7}{Refactoring graph data model}{}% 19
+\BOOKMARK [3][]{Outline0.1.2.6}{Use cases}{Outline0.1}% 3
+\BOOKMARK [2][]{Outline0.2}{Starting with Neo4j and Cypher}{}% 4
+\BOOKMARK [3][]{Outline0.2.1.13}{Configuration and start}{Outline0.2}% 5
+\BOOKMARK [3][]{Outline0.2.2.20}{CRUD operations with Cypher}{Outline0.2}% 6
+\BOOKMARK [2][]{Outline0.3}{Indexes}{}% 7
+\BOOKMARK [2][]{Outline0.4}{Quering for paths and patterns}{}% 8
+\BOOKMARK [2][]{Outline0.5}{Using graph algorithms}{}% 9
+\BOOKMARK [3][]{Outline0.5.1.27}{apoc library}{Outline0.5}% 10
+\BOOKMARK [3][]{Outline0.5.2.30}{algo library}{Outline0.5}% 11
+\BOOKMARK [2][]{Outline0.6}{Importing data}{}% 12
+\BOOKMARK [2][]{Outline0.7}{Refactoring graph data model}{}% 13
