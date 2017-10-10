@@ -9,10 +9,11 @@
 \usepackage{amssymb}
 \usepackage{graphicx}
 \usepackage{tikz}
+\usetikzlibrary{positioning}
 \usepackage{listings}
-\usepackage{pgfplots}
+\usepackage{xcolor}
 
-\title{Graph Data - Modelling and Quering}
+\title{Graph Data - Modelling and Querying}
 \subtitle{with Neo4j and Cypher}
 \author[I.Feuerstein]{Iryna Feuerstein}
 \institute[ODSC]{Open Data Science Conference}
@@ -150,17 +151,16 @@
                 \path (m4) edge node [pos=0.5, sloped, above, blue] {Piccadilly} (m5);
                 \path (m1) edge node [pos=0.5, sloped, above, brown] {Bakerloo} (m5);
                 \path (m2) edge node [pos=0.5, sloped, above] {Northern} (m4);
+                \end{tikzpicture}
                 
-                \addlegendentry{Style 1}
-                \addlegendentry{Style 2}
-                \end{tikzpicture}\\
-                OC = Oxford Circus\\
-                TC = Tottenham Court Road\\
-                HB = Holborn\\
-                LS = Leicester Square\\
-                PC = Piccadilly Circus
             \end{itemize}
+            
         \end{itemize}
+        \begin{align*}
+        OC & = & \text{Oxford Circus} &,& LS & = & \text{Leicester Square} \\
+        HB & = & \text{Holborn} &,& PC & = & \text{Piccadilly Circus}\\
+        TC & = & \text{Tottenham Court Road}\\
+        \end{align*}
     \end{frame}
     
     \begin{frame}
@@ -223,13 +223,13 @@
     \begin{frame}
         \frametitle{Installation}
         \begin{itemize}
-            \item Find the right installation file for your OS at \url{neo4j-training-files/neo4j} on the flash drive and install the software.
+            \item Find the right installation file for your OS at \textcolor{white}{\url{neo4j-training-files/neo4j}} on the flash drive and install the software.
             \pause
-            \item Copy both JAR-files from the \url{neo4j-training-files/plugins} directory into \url{NEO4J_HOME/plugins} directory of your Neo4j installation.
+            \item Copy both JAR-files from the \textcolor{white}{\url{neo4j-training-files/plugins}} directory into \textcolor{white}{\url{NEO4J_HOME/plugins}} directory of your Neo4j installation.
             \pause
-            \item Replace the \url{NEO4J_HOME/conf/neo4j.conf} configuration file with the one found on the flash drive at \url{neo4j-training-files/conf/neo4j.conf}.
+            \item Replace the \textcolor{white}{\url{NEO4J_HOME/conf/neo4j.conf}} configuration file with the one found on the flash drive at \textcolor{white}{\url{neo4j-training-files/conf/neo4j.conf}}.
             \pause
-            \item Copy the \url{neo4j-training-files/data/odsc.db} folder into your \url{NEO4J_HOME/data/databases/} directory
+            \item Copy the \textcolor{white}{\url{neo4j-training-files/data/odsc.db}} folder into your \textcolor{white}{\url{NEO4J_HOME/data/databases/}} directory
         \end{itemize}
     \end{frame}
     
@@ -237,9 +237,9 @@
         \frametitle{Starting Neo4j}
         \begin{itemize}
             \item Start the database with\\
-            \url{NEO4J_HOME/bin/neo4j} \url{start}
+            \textcolor{white}{\url{NEO4J_HOME/bin/neo4j} \url{start}}
             \pause
-            \item Go to \url{http://localhost:7474} within you browser
+            \item Go to \textcolor{white}{\url{http://localhost:7474}} within you browser
         \end{itemize}
     \end{frame}
     
@@ -255,89 +255,166 @@
     
     \subsection{CRUD operations with Cypher}
     \begin{frame}
-        \frametitle{Live coding session}
-        \begin{itemize}
-            \item create node\\
-            CREATE (c:Chemical \{name: 'Helium'\}) RETURN c
-            \item update node\\
-            MERGE (c:Chemical \{name: 'Helium'\}) SET c.symbol = 'He' RETURN c
-            \item delete node 
-            \begin{itemize}
-                \item without relations\\
-                MATCH (c:Chemical \{name:'Helium'\}) DELETE c\\
-                MATCH (c:Chemical)\\
-                \hspace{1cm} WHERE c.name = 'Helium'\\
-                \hspace{1cm} DELETE c
-                \item with existing relations\\
-                MATCH (c:Chemical \{name:'Helium'\})\\
-                \hspace{1cm} DETACH DELETE c\\
-            \end{itemize}
-        \end{itemize}
+        \frametitle{Live coding session - CRUD operations}
+        \begin{block}{create node}
+            CREATE (c:Chemical \{name: 'Helium'\})\\ 
+            \hspace{1cm} RETURN c
+        \end{block}
+        \begin{block}{update node}
+            MERGE (c:Chemical \{name: 'Helium'\})\\
+            \hspace{1cm} SET c.symbol = 'He' 
+            \hspace{1cm} RETURN c
+        \end{block}
     \end{frame}
     
     \begin{frame}
-        \frametitle{Live coding session}
-        \begin{itemize}
-            \item create relation\\
-            \begin{itemize}
-                \item between new nodes\\
-                CREATE (c:Chemical {chemicalName:'Helium'})-[:BELONGS\_TO]->(g:ChemicalGroup {groupName:'Noble gases'}) RETURN c,g
-                \item between existing nodes\\
-                MATCH (g:ChemicalGroup {groupName:'Noble gases'}), (p:ChemicalGroup {groupName:'Gases'})
-                CREATE (g)-[:HAS\_PARENT]->(p) RETURN g,p
-            \end{itemize}
-            \item update relation\\
-            MATCH ()-[r:BELONGS\_TO]-() SET r.updateTime = timestamp() RETURN r\\
-            \item delete relation\\
-            MATCH ()-[r:BELONGS\_TO]-() DELETE r
-        \end{itemize}
+        \frametitle{Live coding session - CRUD operations}
+        \begin{block}{delete node without relations}
+            MATCH (c:Chemical \{name:'Helium'\})\\
+            \hspace{1cm} DELETE c
+        \end{block}
+        \begin{block}{delete node without relations}
+            MATCH (c:Chemical)\\
+            \hspace{1cm} WHERE c.name = 'Helium'\\
+            \hspace{1cm} DELETE c
+        \end{block}
+        \begin{block}{delete node with existing relations}
+            MATCH (c:Chemical \{name:'Helium'\})\\
+            \hspace{1cm} DETACH DELETE c\\
+        \end{block}
     \end{frame}
     
-    \section{Indexes}
-    \begin{frame}{Indexes}
-        CREATE INDEX ON :Gene(geneName, geneSymbol)
+    \begin{frame}
+        \frametitle{Live coding session - CRUD operations}
+        \begin{block}{create relation between new nodes}
+            CREATE (c:Chemical \{chemicalName:'Helium'\})\\
+            \hspace{1cm} -[:BELONGS\_TO]-\textgreater\\
+            \hspace{1cm} (g:ChemicalGroup \{groupName:'Noble gases'\})\\ 
+            RETURN c,g
+        \end{block}
+        \begin{block}{create relation between existing nodes}
+            MATCH (g:ChemicalGroup \{groupName:'Noble gases'\}),\\
+            \hspace{1.4cm} (p:ChemicalGroup \{groupName:'Gases'\})\\
+            CREATE (g)-[:HAS\_PARENT]-\textgreater(p)\\ 
+            RETURN g,p
+        \end{block}
+    \end{frame}
+    
+    \begin{frame}
+        \frametitle{Live coding session - CRUD operations}
+        \begin{block}{update relation}
+            MATCH ()-[r:BELONGS\_TO]-()\\
+            \hspace{1cm} SET r.updateTime = timestamp()\\
+            \hspace{1cm} RETURN r
+        \end{block}
+        \begin{block}{delete relation}
+            MATCH ()-[r:BELONGS\_TO]-()\\
+            \hspace{1cm} DELETE r
+        \end{block}
     \end{frame}
     
     \section{Quering for paths and patterns}
     \begin{frame}
         \frametitle{Live coding session}
-        Examples:
-        \begin{itemize}
-            \item MATCH (g:Gene) WHERE g.geneSymbol = 'CTSD' RETURN g
-            \item MATCH (g:Gene)<-[:ASSOCIATED\_WITH]-(d:Disease) WHERE g.geneSymbol = 'CTSD' RETURN g, d
-            \item MATCH (g:Gene)<-[:ASSOCIATED\_WITH]-(d:Disease) WHERE g.geneSymbol = 'CTSD' RETURN g, count(d)
-            \item MATCH (g:Gene)<-[:ASSOCIATED\_WITH]-(d:Disease) WITH g, count(d) as diseases WHERE diseases > 50 RETURN g.geneName, g.geneSymbol, diseases ORDER BY diseases DESC\\
-            \item MATCH (g:Gene)<-[:ASSOCIATED\_WITH]-(d:Disease)-[:ASSOCIATED\_WITH]-(otherGene:Gene) WHERE g.geneSymbol = 'CTSD' AND d.diseaseName = 'Osteoarthritis' RETURN otherGene.geneName, otherGene.geneSymbol
-        \end{itemize}
+        \begin{block}{Check your indexes}
+            CALL db.indexes\\
+            CREATE INDEX ON :Disease(diseaseId)\\
+            CREATE INDEX ON :Gene(geneName, geneSymbol)\\
+        \end{block}
+    \end{frame}
+    
+    \begin{frame}{Live coding session}
+        \begin{block}{Example}
+            MATCH (g:Gene)\\ 
+            \hspace{1cm} WHERE g.geneSymbol = 'CTSD'\\
+            \hspace{1cm} RETURN g
+        \end{block}
+        \begin{block}{Example}
+            MATCH (g:Gene)\textless-[:ASSOCIATED\_WITH]-(d:Disease)\\
+            \hspace{1cm} WHERE g.geneSymbol = 'CTSD'\\
+            \hspace{1cm} RETURN g, d\\
+        \end{block}
+        \begin{block}{Example}
+            MATCH (g:Gene)\textless-[:ASSOCIATED\_WITH]-(d:Disease)\\
+            \hspace{1cm} WHERE g.geneSymbol = 'CTSD'\\
+            \hspace{1cm} RETURN g, count(d)\\
+        \end{block}
+    \end{frame}
+    
+    \begin{frame}{Live coding session}
+        \begin{block}{Example}
+            MATCH (g:Gene)\textless-[:ASSOCIATED\_WITH]-(d:Disease)\\
+            \hspace{1cm} WITH g, count(d) as diseases\\
+            \hspace{1cm} WHERE diseases \textgreater 50\\
+            \hspace{1cm} RETURN g.geneName, g.geneSymbol, diseases\\
+            \hspace{1cm} ORDER BY diseases DESC
+        \end{block}
+        \begin{block}{Example}
+            MATCH (g:Gene)\textless-[:ASSOCIATED\_WITH]-(d:Disease)\\
+            \hspace{1cm}-[:ASSOCIATED\_WITH]-\textgreater(otherGene:Gene)\\
+            \hspace{1cm} WHERE g.geneSymbol = 'CTSD'\\
+            \hspace{1cm} AND d.diseaseName = 'Osteoarthritis'\\
+            RETURN otherGene.geneName, otherGene.geneSymbol
+        \end{block}
     \end{frame}
     
     \begin{frame}
         \frametitle{Live coding session}
-        \begin{itemize}
-            \item MATCH p = (c:Chemical)-[*2]-(d:Disease) where d.diseaseName STARTS WITH 'Osteo' RETURN p LIMIT 20
-            \item MATCH (c:Chemical)<-[:HAS\_PARENT*3..4]-(descendant:Chemical) 
-            WITH c, count(descendant) AS descendants , collect(descendant.chemicalName) as names ORDER BY descendants DESC LIMIT 10
+        \begin{block}{Example}
+            MATCH p = (c:Chemical)-[*2]-(d:Disease)\\
+            \hspace{1cm} WHERE d.diseaseName STARTS WITH 'Osteo'\\
+            \hspace{1cm} RETURN p LIMIT 20
+        \end{block}
+        \begin{block}{Example}
+            MATCH (c:Chemical)\textless-[:HAS\_PARENT*3..4]-(d:Chemical)\\ 
+            \hspace{1cm} WITH c, count(d) AS descendants,\\
+            \hspace{1cm} collect(d.chemicalName) AS names\\
+            \hspace{1cm} ORDER BY descendants DESC LIMIT 10\\
             RETURN c.chemicalName, names[1..10], descendants
-            \item MATCH (c:Chemical) WHERE c.chemicalName = 'Zinc Acetate'
-            MATCH (d:Disease) WHERE d.diseaseName = 'Alzheimer Disease' 
-            MATCH p = (c)-[*1..3]-(d)
+        \end{block}
+    \end{frame}
+    
+    \begin{frame}
+        \frametitle{Live coding session}
+        \begin{block}{Example}
+            MATCH (c:Chemical)\\
+            \hspace{1cm} WHERE c.chemicalName = 'Zinc Acetate'\\
+            MATCH (d:Disease)\\
+            \hspace{1cm} WHERE d.diseaseName = 'Alzheimer Disease'\\
+            MATCH p = (c)-[*1..3]-(d)\\
             RETURN p LIMIT 20
-            \item
-            MATCH (type:InteractionType {typeName:'degradation'})<-[:INCREASES|:DECREASES]-(i:Interaction)-[:APPLIES\_TO]->(o:Organism {organismName:'Cricetulus griseus'}) RETURN i.description
-        \end{itemize}
+        \end{block}
+        \begin{block}{Example}
+            MATCH (:InteractionType \{typeName:'degradation'\})\\
+            \hspace{1cm} \textless-[:INCREASES\(|\):DECREASES]-\\
+            \hspace{1cm} (i:Interaction)-[:APPLIES\_TO]-\textgreater\\
+            \hspace{1cm} (:Organism \{organismName:'Cricetulus griseus'\})\\
+            RETURN i.description
+        \end{block}
     \end{frame}
     
     \begin{frame}{Live coding session}
-        \begin{block}{Shortest path}
-            MATCH (zinc:Chemical {chemicalName:'Zinc Acetate'}),(metals:Chemical {chemicalName:'Metals, Heavy'}), p = shortestPath((zinc)-[*..15]-(metals))
+        \begin{block}{Shortest path example}
+            MATCH (zinc:Chemical \{chemicalName:'Zinc Acetate'\}),\\
+            \hspace{1cm} (metals:Chemical \{chemicalName:'Metals, Heavy'\}),\\
+            \hspace{1cm} p = shortestPath((zinc)-[*..15]-(metals))\\
             RETURN p\\
-            
-            MATCH (zinc:Chemical {chemicalName:'Zinc Acetate'}),(metals:Chemical {chemicalName:'Metals, Heavy'}), p = shortestPath((zinc)-[*..15]-(metals)) 
-            WHERE NONE (r IN relationships(p) WHERE type(r)= 'CAUSES')
+        \end{block}
+        \begin{block}{Shortest path example}
+            MATCH (zinc:Chemical \{chemicalName:'Zinc Acetate'\}),\\
+            \hspace{1cm} (metals:Chemical \{chemicalName:'Metals, Heavy'\}),\\
+            \hspace{1cm} p = shortestPath((zinc)-[*..15]-(metals))\\
+            WHERE NONE(r IN relationships(p)\\
+            \hspace{2.7cm} WHERE type(r)='CAUSES')\\
             RETURN p\\
-            
-            MATCH (c:Chemical {chemicalName:'Zinc Acetate'}), (d:Disease {diseaseName:'Alzheimer Disease'})
-            MATCH path = allShortestPaths( (c)-[*..3]-(d) )
+        \end{block}
+    \end{frame}
+    
+    \begin{frame}{Live coding session}
+        \begin{block}{Shortest path example}
+            MATCH (c:Chemical \{chemicalName:'Zinc Acetate'\}),\\
+            \hspace{1cm} (d:Disease \{diseaseName:'Alzheimer Disease'\})\\
+            MATCH path = allShortestPaths( (c)-[*..3]-(d) )\\
             RETURN path
         \end{block}
     \end{frame}
@@ -348,7 +425,7 @@
         \begin{itemize}
             \item CALL db.schema
             \item CALL dbms.procedures
-            \item call dbms.functions
+            \item CALL dbms.functions
             \item CALL apoc.help('dijkstra')
         \end{itemize}
     \end{frame}
@@ -357,15 +434,16 @@
     \begin{frame}
         \frametitle{Live coding session}
         \begin{Definition}
-            In a connected graph, the normalized closeness centrality (or closeness) of a node is the average length of the shortest path between the node and all other nodes in the graph. Thus the more central a node is, the closer it is to all other nodes.\footnotemark
+            In a connected graph, the normalized \emph{closeness centrality} of a node is the average length of the shortest path between the node and all other nodes in the graph. Thus the more central a node is, the closer it is to all other nodes.\footnotemark
         \end{Definition}
         \begin{block}{Closeness Centrality Example}
-            MATCH (node:Chemical)
-            WHERE node.chemicalName CONTAINS 'Vitamin'
-            WITH collect(node) AS nodes
-            CALL apoc.algo.closeness(['HAS\_PARENT'],nodes,'BOTH') YIELD node, score
-            RETURN node, score
-            ORDER BY score DESC
+            MATCH (node:Chemical)\\
+            \hspace{1cm} WHERE node.chemicalName CONTAINS 'Vitamin'\\
+            \hspace{1cm} WITH collect(node) AS nodes\\
+            CALL apoc.algo.closeness(['HAS\_PARENT'],nodes,'BOTH')\\
+            \hspace{1cm} YIELD node, score\\
+            RETURN node, score\\
+            \hspace{1cm} ORDER BY score DESC
         \end{block}
         \footnotetext{\url{en.wikipedia.org/wiki/Centrality\#Closeness_centrality}}
     \end{frame}
@@ -376,20 +454,24 @@
             Betweenness centrality quantifies the number of times a node acts as a bridge along the shortest path between two other nodes.\footnotemark
         \end{Definition}
         \begin{block}{Betweenness Centrality Example}
-            MATCH (node:Disease)
-            WHERE node.diseaseName CONTAINS 'deficiency'
-            WITH collect(node) AS nodes
-            CALL apoc.algo.betweenness(['HAS\_PARENT'],nodes,'BOTH') YIELD node, score
-            RETURN node.diseaseName, score
-            ORDER BY score DESC LIMIT 10
+            MATCH (node:Disease)\\
+            \hspace{1cm} WHERE node.diseaseName CONTAINS 'deficiency'\\
+            \hspace{1cm} WITH collect(node) AS nodes\\
+            CALL apoc.algo.betweenness(['HAS\_PARENT'],\\
+            \hspace{6cm} nodes,'BOTH')\\
+            \hspace{1cm} YIELD node, score\\
+            RETURN node.diseaseName, score\\
+            \hspace{1cm} ORDER BY score DESC LIMIT 10
         \end{block}
         \footnotetext{\url{en.wikipedia.org/wiki/Centrality\#Betweenness_centrality}}
     \end{frame}
     
     \begin{frame}
         \frametitle{Live coding session}
-        MATCH (startNode:Category {name:'Endocrine system disease'})
-        CALL apoc.algo.cliquesWithNode(startNode, 4) YIELD clique
+        MATCH (startNode:Category\\
+        \hspace{3cm} \{name:'Endocrine system disease'\})\\
+        \hspace{1cm} CALL apoc.algo.cliquesWithNode(startNode, 4)\\
+        \hspace{1cm} YIELD clique\\
         RETURN clique
     \end{frame}
     
@@ -397,73 +479,123 @@
     \begin{frame}
         \frametitle{Live coding session}
         \begin{block}{PageRank example}
-            call algo.pageRank.stream('InteractionType', 'HAS\_PARENT',{iterations:20}) YIELD node, score
-            WITH * ORDER BY score DESC LIMIT 5
+            CALL algo.pageRank.stream('InteractionType',\\
+            \hspace{1cm} 'HAS\_PARENT', \{iterations:20\})\\
+            \hspace{1cm} YIELD node, score\\
+            WITH * ORDER BY score DESC LIMIT 5\\
             RETURN node.typeName, node.code, score;
         \end{block}
         \begin{block}{Partitioning into connected components}
-            CALL algo.unionFind('InteractionType', 'HAS\_PARENT', {write:true, partitionProperty:"partition"})
-            YIELD nodes, setCount, loadMillis, computeMillis, writeMillis
-        \end{block}
-        \begin{block}{Closeness}%TODO
-            CALL algo.closeness('Chemical', 'HAS\_PARENT', {write:true, writeProperty:'centrality'})
-            YIELD nodes,loadMillis, computeMillis, writeMillis\\
-            
-            match (c:Chemical) where c.centrality > 200 return c.chemicalName, c.centrality order by c.centrality desc limit 10
+            CALL algo.unionFind('InteractionType',\\
+            \hspace{2cm} 'HAS\_PARENT', {write:true,\\
+            \hspace{2cm} partitionProperty:"partition"})\\
+            YIELD nodes, setCount, loadMillis,\\
+            \hspace{2cm} computeMillis, writeMillis
         \end{block}
     \end{frame}
     
+    \begin{frame}
+        \frametitle{Live coding session}
+        \begin{block}{Closeness}%TODO
+            CALL algo.closeness('Chemical', 'HAS\_PARENT',\\
+            \hspace{1cm} \{write:true, writeProperty:'centrality'\})\\
+            YIELD nodes, loadMillis, computeMillis, writeMillis
+        \end{block}
+        
+        \begin{block}{Closeness}
+            MATCH (c:Chemical)\\
+            \hspace{1cm} WHERE c.centrality \textgreater 200\\
+            RETURN c.chemicalName, c.centrality\\
+            \hspace{1cm} ORDER BY c.centrality DESC LIMIT 10
+        \end{block}
+    \end{frame}
+   
     \section{Importing data}
     \begin{frame}
         \frametitle{LOAD CSV}
-        USING PERIODIC COMMIT 500
-        LOAD CSV WITH HEADERS FROM "file:///neo4j-training-files/data/CTD/CTD\_Disease-GO\_biological\_process\_associations.csv" AS line
-        RETURN line LIMIT 10\\
+        \begin{block}{View the data}
+            USING PERIODIC COMMIT 500\\
+            LOAD CSV WITH HEADERS FROM "file:///.../\_Disease-GO\_biological\_process\_associations.csv" AS line\\
+            RETURN line LIMIT 10
+        \end{block}
+        \footnotetext{\url{http://ctdbase.org/}}
+    \end{frame}
+    
+    \begin{frame}
+        \frametitle{LOAD CSV}
         
-        USING PERIODIC COMMIT 500
-        LOAD CSV WITH HEADERS FROM "file:///neo4j-training-files/data/CTD/CTD\_Disease-GO\_biological\_process\_associations.csv" AS line LIMIT 20
-        MATCH (d:Disease) WHERE last(split(d.diseaseID,':')) = line.DiseaseID 
-        MERGE (b:BiologicalProcess {goid:line.GOID}) SET b.goName = line.GOName
-        MERGE (b)<-[:AFFECTED\_BY {inferenceGeneQty:line.InferenceGeneQty, inferenceGeneSymbols:line.InferenceGeneSymbols}]-(d)
+        \begin{block}{Import the data}
+            USING PERIODIC COMMIT 500\\
+            LOAD CSV WITH HEADERS FROM "file:///.../Disease-GO\_biological\_process\_associations.csv"\\
+            \hspace{1cm} AS line LIMIT 20\\
+            MATCH (d:Disease)\\
+            \hspace{1cm} WHERE last(split(d.diseaseID,':')) = line.DiseaseID\\ 
+            MERGE (b:BiologicalProcess {goid:line.GOID})\\
+            \hspace{1cm} SET b.goName = line.GOName\\
+            MERGE (b)\textless-[:AFFECTED\_BY\\
+            \hspace{2cm} \{inferenceGeneQty:line.InferenceGeneQty,\\
+            \hspace{2cm} inferenceGeneSymbols:line.InferenceGeneSymbols\}]-(d)
+        \end{block}
+        \footnotetext{\url{http://ctdbase.org/}}
     \end{frame}
 
     \begin{frame}{apoc.load.csv}
-        CALL apoc.load.csv(
-        'file:///neo4j-training-files/data/CTD/CTD\_chem\_go\_enriched.csv',
-        {})
-        YIELD lineNo, map AS line RETURN lineNo, line limit 5\\
         
-        CALL apoc.periodic.iterate(
-        "CALL apoc.load.csv(
-        'file:///neo4j-training-files/data/CTD/CTD\_chem\_go\_enriched.csv',
-        {})
-        YIELD lineNo, map AS line RETURN lineNo, line",
-        "MATCH (c:Chemical {chemicalID : line.ChemicalID})
-        MERGE (o:Ontology {name : line.Ontology})
-        MERGE (t:Term {termID : line.GOTermID})
-        SET t.termName = line.GOTermName
-        SET t.level = line.HighestGOLevel
-        MERGE (c)<-[r:AFFECTED\_BY]-(t)-[:TERM\_OF]->(o)
-        SET r.pValue = line.PValue
-        SET r.correctedPValue = line.CorrectedPValue",
-        {batchSize:10000, iterateList:true}
+        \begin{block}{View the data}
+        CALL apoc.load.csv(\\
+        \hspace{1cm}'file:///.../CTD\_chem\_go\_enriched.csv',\\
+        {})\\
+        YIELD lineNo, map AS line RETURN lineNo, line limit 5
+        \end{block}
+        \footnotetext{\url{http://ctdbase.org/}}
+    \end{frame}
+    
+    \begin{frame}{Loading big files}
+        CALL apoc.periodic.iterate(\\
+        \hspace{1cm} "CALL apoc.load.csv(\\
+        \hspace{3cm} 'file:///.../CTD\_chem\_go\_enriched.csv',\\
+        \hspace{1cm} {})\\
+        \hspace{1cm} YIELD lineNo, map AS line RETURN lineNo, line",\\
+        \hspace{1cm} "MATCH (c:Chemical \{chemicalID : line.ChemicalID\})\\
+        \hspace{1cm} MERGE (o:Ontology \{name : line.Ontology\})\\
+        \hspace{1cm} MERGE (t:Term \{termID : line.GOTermID\})\\
+        \hspace{3cm} SET t.termName = line.GOTermName\\
+        \hspace{3cm} SET t.level = line.HighestGOLevel\\
+        \hspace{1cm} MERGE (c)\textless-[r:AFFECTED\_BY]-(t)-[:TERM\_OF]-\textgreater(o)\\
+        \hspace{2cm} SET r.pValue = line.PValue\\
+        \hspace{2cm} SET r.correctedPValue = line.CorrectedPValue",\\
+        \hspace{1cm} \{batchSize:10000, iterateList:true\}\\
         )
+        \footnotetext{\url{http://ctdbase.org/}}
     \end{frame}
     
     
     \section{Refactoring graph data model}
     \begin{frame}
         \frametitle{Live coding session}
-        MATCH (n:Movie)
-        CALL apoc.create.addLabels( id(n), [ n.genre ] ) YIELD node
-        REMOVE node.genre
-        RETURN node
-        \\
-        CALL apoc.periodic.iterate(
-        "MATCH (p:Person) WHERE (p)-[:ACTED\_IN]->() RETURN p",
-        "SET p:Actor", {batchSize:10000, parallel:true})
-        \\
-        call apoc.refactor.setType(rel, 'NEW-TYPE')
+        \begin{block}{Add labels}
+            MATCH (p:Pathway)\\
+            \hspace{1cm} WHERE toLower(p.pathwayName)\\
+            \hspace{1cm} CONTAINS 'reaction'\\
+            CALL apoc.create.addLabels(id(p), ['Reaction'])\\
+            \hspace{1cm} YIELD node\\
+            RETURN count(node)
+        \end{block}
+        \begin{block}{Rename relation}
+            MATCH ()-[r:PART\_OF]-()\\
+            CALL apoc.refactor.setType(r, 'BELONGS\_TO')\\
+            YIELD input, output\\
+            RETURN count(input), count(output)\\
+        \end{block}
+    \end{frame}
+    
+    \begin{frame}{References}
+        \begin{itemize}
+            \item Curated chemical–gene, chemical–disease and gene–disease interactions data were retrieved from the Comparative Toxicogenomics Database (CTD), MDI Biological Laboratory, Salisbury Cove, Maine, and NC State University, Raleigh, North Carolina. URL: \textcolor{white}{\url{http://ctdbase.org/}}. [October, 2017].
+            \item Cypher Reference Card \textcolor{white}{\url{https://neo4j.com/docs/cypher-refcard/current/}}
+            \item APOC User Guide \textcolor{white}{\url{https://neo4j-contrib.github.io/neo4j-apoc-procedures/}}
+            \item Efficient Graph Algorithms in Neo4j \textcolor{white}{\url{https://neo4j.com/blog/efficient-graph-algorithms-neo4j/}}
+        \end{itemize}
     \end{frame}
     
 \end{document}

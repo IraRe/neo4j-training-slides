@@ -4,10 +4,9 @@
 \BOOKMARK [2][]{Outline0.2}{Starting with Neo4j and Cypher}{}% 4
 \BOOKMARK [3][]{Outline0.2.1.13}{Configuration and start}{Outline0.2}% 5
 \BOOKMARK [3][]{Outline0.2.2.20}{CRUD operations with Cypher}{Outline0.2}% 6
-\BOOKMARK [2][]{Outline0.3}{Indexes}{}% 7
-\BOOKMARK [2][]{Outline0.4}{Quering for paths and patterns}{}% 8
-\BOOKMARK [2][]{Outline0.5}{Using graph algorithms}{}% 9
-\BOOKMARK [3][]{Outline0.5.1.27}{apoc library}{Outline0.5}% 10
-\BOOKMARK [3][]{Outline0.5.2.30}{algo library}{Outline0.5}% 11
-\BOOKMARK [2][]{Outline0.6}{Importing data}{}% 12
-\BOOKMARK [2][]{Outline0.7}{Refactoring graph data model}{}% 13
+\BOOKMARK [2][]{Outline0.3}{Quering for paths and patterns}{}% 7
+\BOOKMARK [2][]{Outline0.4}{Using graph algorithms}{}% 8
+\BOOKMARK [3][]{Outline0.4.1.32}{apoc library}{Outline0.4}% 9
+\BOOKMARK [3][]{Outline0.4.2.35}{algo library}{Outline0.4}% 10
+\BOOKMARK [2][]{Outline0.5}{Importing data}{}% 11
+\BOOKMARK [2][]{Outline0.6}{Refactoring graph data model}{}% 12
