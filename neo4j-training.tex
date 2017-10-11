@@ -12,6 +12,8 @@
 \usetikzlibrary{positioning}
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage{fontawesome}
+\usepackage{marvosym}
 
 \title{Graph Data - Modelling and Querying}
 \subtitle{with Neo4j and Cypher}
@@ -107,6 +109,7 @@
         \begin{itemize}
             \pause
             \item Networks
+            \pause
             \begin{itemize}
                 \item Social networks\\[3mm]
                 \begin{tikzpicture}
@@ -451,7 +454,7 @@
     \begin{frame}
         \frametitle{Live coding session}
         \begin{Definition}
-            Betweenness centrality quantifies the number of times a node acts as a bridge along the shortest path between two other nodes.\footnotemark
+            \emph{Betweenness centrality} quantifies the number of times a node acts as a bridge along the shortest path between two other nodes.\footnotemark
         \end{Definition}
         \begin{block}{Betweenness Centrality Example}
             MATCH (node:Disease)\\
@@ -468,11 +471,17 @@
     
     \begin{frame}
         \frametitle{Live coding session}
+        \begin{Definition}
+            In graph theory, a \emph{clique} is a subset of vertices of an undirected graph such that every two distinct vertices in the clique are adjacent.
+        \end{Definition}
+        \begin{block}{Clique example query}
         MATCH (startNode:Category\\
         \hspace{3cm} \{name:'Endocrine system disease'\})\\
         \hspace{1cm} CALL apoc.algo.cliquesWithNode(startNode, 4)\\
         \hspace{1cm} YIELD clique\\
         RETURN clique
+        \end{block}
+        \footnotetext{\url{en.wikipedia.org/wiki/Clique_(graph_theory)}}
     \end{frame}
     
     \subsection{algo library}
@@ -496,7 +505,7 @@
     
     \begin{frame}
         \frametitle{Live coding session}
-        \begin{block}{Closeness}%TODO
+        \begin{block}{Closeness}
             CALL algo.closeness('Chemical', 'HAS\_PARENT',\\
             \hspace{1cm} \{write:true, writeProperty:'centrality'\})\\
             YIELD nodes, loadMillis, computeMillis, writeMillis
@@ -572,7 +581,7 @@
     
     \section{Refactoring graph data model}
     \begin{frame}
-        \frametitle{Live coding session}
+        \frametitle{Refactor your graph}
         \begin{block}{Add labels}
             MATCH (p:Pathway)\\
             \hspace{1cm} WHERE toLower(p.pathwayName)\\
@@ -596,6 +605,21 @@
             \item APOC User Guide \textcolor{white}{\url{https://neo4j-contrib.github.io/neo4j-apoc-procedures/}}
             \item Efficient Graph Algorithms in Neo4j \textcolor{white}{\url{https://neo4j.com/blog/efficient-graph-algorithms-neo4j/}}
         \end{itemize}
+    \end{frame}
+    
+    \begin{frame}{Getting Help}
+        \begin{block}{Slack}
+            \url{neo4j.com/blog/public-neo4j-users-slack-group/}
+        \end{block}
+        \pause
+        \begin{block}{Contact details}
+            \begin{itemize}
+                \item \faTwitter \(\;\) \url{@ira_res}
+                \item \faLinkedin \(\;\) \url{www.linkedin.com/in/ifeuerstein/}
+                \item \faGithub \(\;\) \url{github.com/IraRe}
+                \item \Email \(\;\) \url{iryna.feuerstein@prodyna.com}
+            \end{itemize}
+        \end{block}
     \end{frame}
     
 \end{document}
