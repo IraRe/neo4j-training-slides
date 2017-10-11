@@ -246,6 +246,23 @@
         \end{itemize}
     \end{frame}
     
+    \begin{frame}{Practice activity}
+        \begin{itemize}
+            \item Please separate in 4 groups:
+            \begin{itemize}
+                \item Chemical
+                \item Disease
+                \item Organism
+                \item Gene
+            \end{itemize}
+            \pause
+            \item Explore the dashboard in groups
+            \item What can you find out about your node type?
+            \item What questions arise?
+        \end{itemize}
+        
+    \end{frame}
+    
     \begin{frame}
         \frametitle{Demonstration}
         \begin{block}{Important configuration entries}
@@ -314,6 +331,18 @@
             MATCH ()-[r:BELONGS\_TO]-()\\
             \hspace{1cm} DELETE r
         \end{block}
+    \end{frame}
+    
+    \begin{frame}{Practice activity}
+        \begin{itemize}
+            \item Go back to your graph model from the beginning of the training.
+            \item Create about
+            \begin{itemize}
+                \item 10 nodes and
+                \item 15 relations
+                \item with properties.
+            \end{itemize}
+        \end{itemize}
     \end{frame}
     
     \section{Quering for paths and patterns}
@@ -394,6 +423,18 @@
             \hspace{1cm} (:Organism \{organismName:'Cricetulus griseus'\})\\
             RETURN i.description
         \end{block}
+    \end{frame}
+
+    \begin{frame}{Practice activity}
+        For each group (Chemical, Disease, Organism, Gene):
+        \begin{itemize}
+            \item Please check your questions from the first practice activity.
+            \begin{itemize}
+                \item Can you answer any of them now?
+            \end{itemize}
+            \item Think about new questions as you explore the graph with the querying techniques just learned.
+            \item Present one question, appropriate query and an answer to your classmates.
+        \end{itemize}
     \end{frame}
     
     \begin{frame}{Live coding session}
@@ -482,6 +523,15 @@
         RETURN clique
         \end{block}
         \footnotetext{\url{en.wikipedia.org/wiki/Clique_(graph_theory)}}
+    \end{frame}
+    
+    \begin{frame}{Practice activity}
+        Explore the APOC library:
+        \begin{itemize}
+            \item read the documentation,
+            \item try out different queries,
+            \item make notes to about your questions and results.
+        \end{itemize}
     \end{frame}
     
     \subsection{algo library}
@@ -578,6 +628,14 @@
         \footnotetext{\url{http://ctdbase.org/}}
     \end{frame}
     
+    \begin{frame}{Practice activity}
+        \begin{itemize}
+            \item Choose a CSV file from \url{neo4j-training-files/data/CTD}.
+            \item Load and show first 15 lines.
+            \item Import some of the columns of the first 15-20 lines and connect it to existing graph nodes.
+        \end{itemize}
+    \end{frame}
+    
     
     \section{Refactoring graph data model}
     \begin{frame}
@@ -596,6 +654,15 @@
             YIELD input, output\\
             RETURN count(input), count(output)\\
         \end{block}
+    \end{frame}
+    
+    \begin{frame}{Practice activity}
+        \begin{itemize}
+            \item Rename the relation \url{:INVOLVED_IN} in \url{:INVOLVES}
+            \item and invert the direction.
+            \item Can you find out how to invert the direction of the relation?
+            \item First rename, then invert? Or first invert and then rename? 
+        \end{itemize}
     \end{frame}
     
     \begin{frame}{References}
@@ -620,6 +687,16 @@
                 \item \Email \(\;\) \url{iryna.feuerstein@prodyna.com}
             \end{itemize}
         \end{block}
+    \end{frame}
+    
+    \begin{frame}{Home work}
+        \begin{itemize}
+            \item Pick an organism from the data base (for example the Chinese Hamster aka \emph{Cricetulus griseus}).
+            \includegraphics[height=3cm]{cricetulus2.png}
+            \item Find some interesting information about it in the database.
+            \item Tweet to me a piece of information with the hashtag \url{\#cricetulus}.
+            \item Get a coffe mug for an interesting tweet!
+        \end{itemize}
     \end{frame}
     
 \end{document}
