@@ -14,14 +14,15 @@
 \usepackage{xcolor}
 \usepackage{fontawesome}
 \usepackage{marvosym}
+\usepackage{romannum}
 
 \title{Graph Data - Modelling and Querying}
 \subtitle{with Neo4j and Cypher}
 \author[I.Feuerstein]{Iryna Feuerstein}
-\institute[ODSC]{Open Data Science Conference}
+\institute[Meetup]{Graph Database - NRW Meetup}
 \titlegraphic{\includegraphics[height=0.6cm]{pd_logo.png}}
-\logo{\includegraphics[height=0.7cm]{logo.png}\vspace{230pt}}
-\date{12 October 2017}
+%\logo{\includegraphics[height=0.7cm]{logo.png}\vspace{230pt}}
+\date{6 December 2017}
 \setbeamertemplate{background}
 {\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{background.png}}
 \begin{document}
@@ -220,6 +221,14 @@
         \end{itemize}
         \footnotetext{\url{http://ctdbase.org/}}
     \end{frame}
+    
+    \begin{frame}{Practice activity - Graph modeling}
+        \begin{itemize}
+            \item Come up with any use case idea of your choice. 
+            \item Model it as a graph on a sheet of paper. 
+            \item Introduce it to at least one of the attendees.
+        \end{itemize}
+    \end{frame}
         
     \section{Starting with Neo4j and Cypher}
     \subsection{Configuration and start}
@@ -228,11 +237,20 @@
         \begin{itemize}
             \item Find the right installation file for your OS at \textcolor{white}{\url{neo4j-training-files/neo4j}} on the flash drive and install the software.
             \pause
-            \item Copy both JAR-files from the \textcolor{white}{\url{neo4j-training-files/plugins}} directory into \textcolor{white}{\url{NEO4J_HOME/plugins}} directory of your Neo4j installation.
+            \item Linux-Users: Copy both JAR-files from the \textcolor{white}{\url{neo4j-training-files/plugins}} directory into \textcolor{white}{\url{NEO4J_HOME/plugins}} directory of your Neo4j installation.
             \pause
+            \item Mac-Users: Copy the plugins directory into your \textcolor{white}{\url{/Application/Neo...}} and into \textcolor{white}{\url{graph.db/plugins}}
+            \pause
+            \item Windows-Users: Follow the installation and start client.
+        \end{itemize}
+    \end{frame}
+    
+    \begin{frame}
+        \frametitle{Installation}
+        \begin{itemize}
             \item Replace the \textcolor{white}{\url{NEO4J_HOME/conf/neo4j.conf}} configuration file with the one found on the flash drive at \textcolor{white}{\url{neo4j-training-files/conf/neo4j.conf}}.
             \pause
-            \item Copy the \textcolor{white}{\url{neo4j-training-files/data/odsc.db}} folder into your \textcolor{white}{\url{NEO4J_HOME/data/databases/}} directory
+            \item Copy the \textcolor{white}{\url{neo4j-training-files/data/ctdbase.db}} folder into your \textcolor{white}{\url{NEO4J_HOME/data/databases/}} directory
         \end{itemize}
     \end{frame}
     
@@ -344,6 +362,8 @@
             \end{itemize}
         \end{itemize}
     \end{frame}
+    
+    \frame{FINISH: PART ONE}
     
     \section{Quering for paths and patterns}
     \begin{frame}
