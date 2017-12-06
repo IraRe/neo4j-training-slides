@@ -258,7 +258,7 @@
         \frametitle{Starting Neo4j}
         \begin{itemize}
             \item Start the database with\\
-            \textcolor{white}{\url{NEO4J_HOME/bin/neo4j} \url{start}}
+            \textcolor{white}{\url{NEO4J_HOME/bin/neo4j} \url{console}}
             \pause
             \item Go to \textcolor{white}{\url{http://localhost:7474}} within you browser
         \end{itemize}
@@ -284,7 +284,7 @@
     \begin{frame}
         \frametitle{Demonstration}
         \begin{block}{Important configuration entries}
-            dbms.active\_database=odsc.db\\
+            dbms.active\_database=ctdbase.db\\
             dbms.security.auth\_enabled=false\\
             dbms.security.procedures.unrestricted=algo.*,apoc.*\\
             apoc.import.file.enabled=true
