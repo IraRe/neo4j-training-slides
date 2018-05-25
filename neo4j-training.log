@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.25)  19 DEC 2017 11:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015/Debian) (preloaded format=pdflatex 2017.11.25)  3 MAR 2018 13:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1380,14 +1380,14 @@ Package pdftex.def Info: background.png used on input line 48.
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 105.
+Package pdftex.def Info: background.png used on input line 55.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
  [4
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 105.
+Package pdftex.def Info: background.png used on input line 109.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
  [5
 
@@ -1395,21 +1395,21 @@ Package pdftex.def Info: background.png used on input line 105.
 File: background.png Graphic file (type png)
 
 <use background.png>
-Package pdftex.def Info: background.png used on input line 137.
+Package pdftex.def Info: background.png used on input line 109.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
  [6
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 137.
+Package pdftex.def Info: background.png used on input line 141.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
  [7
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 137.
+Package pdftex.def Info: background.png used on input line 141.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
  [8
 
@@ -1417,21 +1417,21 @@ Package pdftex.def Info: background.png used on input line 137.
 File: background.png Graphic file (type png)
 
 <use background.png>
-Package pdftex.def Info: background.png used on input line 137.
+Package pdftex.def Info: background.png used on input line 141.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
  [9
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 168.
+Package pdftex.def Info: background.png used on input line 141.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
  [10
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 187.
+Package pdftex.def Info: background.png used on input line 172.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
 
 [11
@@ -1439,390 +1439,410 @@ Package pdftex.def Info: background.png used on input line 187.
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 214.
+Package pdftex.def Info: background.png used on input line 191.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
  [12
 
 ]
-<genomics.png, id=405, 785.93625pt x 350.81062pt>
+File: background.png Graphic file (type png)
+ <use background.png>
+Package pdftex.def Info: background.png used on input line 218.
+(pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
+ [13
+
+]
+<genomics.png, id=431, 785.93625pt x 350.81062pt>
 File: genomics.png Graphic file (type png)
  <use genomics.png>
-Package pdftex.def Info: genomics.png used on input line 223.
+Package pdftex.def Info: genomics.png used on input line 227.
 (pdftex.def)             Requested size: 276.559pt x 123.44931pt.
 File: background.png Graphic file (type png)
 
 <use background.png>
-Package pdftex.def Info: background.png used on input line 223.
+Package pdftex.def Info: background.png used on input line 227.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
- [13
+ [14
 
  <./genomics.png (PNG copy)>]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 231.
+Package pdftex.def Info: background.png used on input line 235.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
 
-[14
+[15
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 246.
-(pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
- [15
-
-]
-File: background.png Graphic file (type png)
- <use background.png>
-Package pdftex.def Info: background.png used on input line 246.
+Package pdftex.def Info: background.png used on input line 250.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
  [16
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 246.
+Package pdftex.def Info: background.png used on input line 250.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
-
-[17
+ [17
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 246.
+Package pdftex.def Info: background.png used on input line 250.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
- [18
+
+[18
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 255.
+Package pdftex.def Info: background.png used on input line 250.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
  [19
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 255.
+Package pdftex.def Info: background.png used on input line 259.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
-
-[20
+ [20
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 265.
+Package pdftex.def Info: background.png used on input line 259.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
- [21
+
+[21
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 265.
+Package pdftex.def Info: background.png used on input line 269.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
  [22
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 282.
+Package pdftex.def Info: background.png used on input line 269.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
-
-[23
+ [23
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 282.
+Package pdftex.def Info: background.png used on input line 286.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
- [24
+
+[24
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 292.
+Package pdftex.def Info: background.png used on input line 286.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
  [25
 
 ]
-LaTeX Font Info:    Try loading font information for OMS+cmss on input line 306
-.
-LaTeX Font Info:    No file OMScmss.fd. on input line 306.
-
-
-LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
-(Font)              using `OMS/cmsy/m/n' instead
-(Font)              for symbol `textbraceleft' on input line 306.
-
 File: background.png Graphic file (type png)
-<use background.png>
-Package pdftex.def Info: background.png used on input line 306.
+ <use background.png>
+Package pdftex.def Info: background.png used on input line 296.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
  [26
 
 ]
+LaTeX Font Info:    Try loading font information for OMS+cmss on input line 310
+.
+LaTeX Font Info:    No file OMScmss.fd. on input line 310.
+
+
+LaTeX Font Warning: Font shape `OMS/cmss/m/n' undefined
+(Font)              using `OMS/cmsy/m/n' instead
+(Font)              for symbol `textbraceleft' on input line 310.
+
 File: background.png Graphic file (type png)
- <use background.png>
-Package pdftex.def Info: background.png used on input line 323.
+<use background.png>
+Package pdftex.def Info: background.png used on input line 310.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
  [27
 
 ]
-LaTeX Font Info:    Try loading font information for OML+cmss on input line 339
-.
-LaTeX Font Info:    No file OMLcmss.fd. on input line 339.
-
-
-LaTeX Font Warning: Font shape `OML/cmss/m/n' undefined
-(Font)              using `OML/cmm/m/it' instead
-(Font)              for symbol `textgreater' on input line 339.
-
 File: background.png Graphic file (type png)
-<use background.png>
-Package pdftex.def Info: background.png used on input line 339.
+ <use background.png>
+Package pdftex.def Info: background.png used on input line 327.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
  [28
 
 ]
+LaTeX Font Info:    Try loading font information for OML+cmss on input line 343
+.
+LaTeX Font Info:    No file OMLcmss.fd. on input line 343.
+
+
+LaTeX Font Warning: Font shape `OML/cmss/m/n' undefined
+(Font)              using `OML/cmm/m/it' instead
+(Font)              for symbol `textgreater' on input line 343.
+
 File: background.png Graphic file (type png)
- <use background.png>
-Package pdftex.def Info: background.png used on input line 352.
+<use background.png>
+Package pdftex.def Info: background.png used on input line 343.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
  [29
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 364.
+Package pdftex.def Info: background.png used on input line 356.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
-
-[30
+ [30
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 366.
+Package pdftex.def Info: background.png used on input line 368.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
- [31
+
+[31
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 376.
+Package pdftex.def Info: background.png used on input line 370.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
  [32
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 394.
+Package pdftex.def Info: background.png used on input line 380.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
-
-[33
+ [33
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 410.
+Package pdftex.def Info: background.png used on input line 398.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
- [34
+
+[34
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 426.
+Package pdftex.def Info: background.png used on input line 414.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
  [35
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 443.
+Package pdftex.def Info: background.png used on input line 430.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
-
-[36
+ [36
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 455.
+Package pdftex.def Info: background.png used on input line 447.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
- [37
+
+[37
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 472.
+Package pdftex.def Info: background.png used on input line 459.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
  [38
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 481.
+Package pdftex.def Info: background.png used on input line 476.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
-
-[39
+ [39
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 483.
+Package pdftex.def Info: background.png used on input line 485.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
- [40
+
+[40
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 494.
+Package pdftex.def Info: background.png used on input line 487.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
  [41
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 512.
+Package pdftex.def Info: background.png used on input line 498.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
-
-[42
+ [42
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 530.
+Package pdftex.def Info: background.png used on input line 509.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
- [43
+
+[43
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 545.
+Package pdftex.def Info: background.png used on input line 527.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
  [44
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 554.
+Package pdftex.def Info: background.png used on input line 545.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
-
-[45
+ [45
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 573.
+Package pdftex.def Info: background.png used on input line 560.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
- [46
+
+[46
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 589.
+Package pdftex.def Info: background.png used on input line 569.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
  [47
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 600.
+Package pdftex.def Info: background.png used on input line 588.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
-
-[48
+ [48
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 618.
+Package pdftex.def Info: background.png used on input line 604.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
- [49
+
+[49
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 629.
+Package pdftex.def Info: background.png used on input line 606.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
  [50
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 648.
+Package pdftex.def Info: background.png used on input line 616.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
-
-[51
+ [51
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 656.
+Package pdftex.def Info: background.png used on input line 634.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
- [52
+
+[52
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 676.
+Package pdftex.def Info: background.png used on input line 644.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
  [53
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 685.
+Package pdftex.def Info: background.png used on input line 663.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
-
-[54
+ [54
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 694.
+Package pdftex.def Info: background.png used on input line 671.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
- [55
+
+[55
 
 ]
-LaTeX Font Info:    Try loading font information for U+fontawesomethree on inpu
-t line 709.
-
-(/usr/share/texlive/texmf-dist/tex/latex/fontawesome/ufontawesomethree.fd
-File: ufontawesomethree.fd 2015/07/30 Font definitions for U/fontawesomethree.
-)
-LaTeX Font Info:    Try loading font information for U+fontawesometwo on input 
-line 709.
-
-(/usr/share/texlive/texmf-dist/tex/latex/fontawesome/ufontawesometwo.fd
-File: ufontawesometwo.fd 2015/07/30 Font definitions for U/fontawesometwo.
-)
-LaTeX Font Info:    Try loading font information for U+mvs on input line 709.
-
-(/usr/share/texlive/texmf-dist/tex/latex/marvosym/umvs.fd)
 File: background.png Graphic file (type png)
-
-<use background.png>
-Package pdftex.def Info: background.png used on input line 709.
+ <use background.png>
+Package pdftex.def Info: background.png used on input line 691.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
  [56
 
 ]
 File: background.png Graphic file (type png)
  <use background.png>
-Package pdftex.def Info: background.png used on input line 709.
+Package pdftex.def Info: background.png used on input line 700.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
  [57
 
 ]
-<cricetulus2.png, id=1608, 517.935pt x 326.72063pt>
+File: background.png Graphic file (type png)
+ <use background.png>
+Package pdftex.def Info: background.png used on input line 709.
+(pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
+
+[58
+
+]
+LaTeX Font Info:    Try loading font information for U+fontawesomethree on inpu
+t line 724.
+ (/usr/share/texlive/texmf-dist/tex/latex/fontawesome/ufontawesomethree.fd
+File: ufontawesomethree.fd 2015/07/30 Font definitions for U/fontawesomethree.
+)
+LaTeX Font Info:    Try loading font information for U+fontawesometwo on input 
+line 724.
+(/usr/share/texlive/texmf-dist/tex/latex/fontawesome/ufontawesometwo.fd
+File: ufontawesometwo.fd 2015/07/30 Font definitions for U/fontawesometwo.
+)
+LaTeX Font Info:    Try loading font information for U+mvs on input line 724.
+
+(/usr/share/texlive/texmf-dist/tex/latex/marvosym/umvs.fd)
+File: background.png Graphic file (type png)
+
+<use background.png>
+Package pdftex.def Info: background.png used on input line 724.
+(pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
+ [59
+
+]
+File: background.png Graphic file (type png)
+ <use background.png>
+Package pdftex.def Info: background.png used on input line 724.
+(pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
+ [60
+
+]
+<cricetulus2.png, id=1683, 517.935pt x 326.72063pt>
 File: cricetulus2.png Graphic file (type png)
  <use cricetulus2.png>
-Package pdftex.def Info: cricetulus2.png used on input line 719.
+Package pdftex.def Info: cricetulus2.png used on input line 734.
 (pdftex.def)             Requested size: 135.30797pt x 85.35826pt.
 File: background.png Graphic file (type png)
 
 <use background.png>
-Package pdftex.def Info: background.png used on input line 719.
+Package pdftex.def Info: background.png used on input line 734.
 (pdftex.def)             Requested size: 364.18686pt x 273.14014pt.
- [58
+ [61
 
  <./cricetulus2.png>]
 \tf@nav=\write6
@@ -1834,20 +1854,14 @@ Package pdftex.def Info: background.png used on input line 719.
 \tf@snm=\write8
 \openout8 = `neo4j-training.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 721.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 721.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 736.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 736.
  (./neo4j-training.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 721.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 721.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 736.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 736.
+Package rerunfilecheck Info: File `neo4j-training.out' has not changed.
+(rerunfilecheck)             Checksum: 1D18066E2E18CBDAADBC8F027B4E755A;744.
 
-
-Package rerunfilecheck Warning: File `neo4j-training.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `neo4j-training.out':
-(rerunfilecheck)             Before: 1AB5B854B9274E229741B00C8805274A;744
-(rerunfilecheck)             After:  6AD71695EC88C4917D0817F0F74867D5;744.
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
@@ -1855,41 +1869,35 @@ LaTeX Font Warning: Size substitutions with differences
 
 LaTeX Font Warning: Some font shapes were not available, defaults substituted.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 721.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 736.
  ) 
 Here is how much of TeX's memory you used:
- 23893 strings out of 493029
- 445087 string characters out of 6136233
- 526136 words of memory out of 5000000
- 26767 multiletter control sequences out of 15000+600000
+ 23905 strings out of 493029
+ 445186 string characters out of 6136233
+ 526304 words of memory out of 5000000
+ 26775 multiletter control sequences out of 15000+600000
  16052 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  56i,14n,59p,412b,957s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{Outline0.4.2.45} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{Outline0.4.1.41} has been referenced but does not e
-xist, replaced by a fixed one
-
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc}{
-/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomethree.enc}
-</usr/share/texlive/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb><
-/usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr/s
-hare/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share/t
-exlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texlive
-/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texlive/texmf
--dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist/f
-onts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/texlive/texmf-dist/fonts/
-type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/
-public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public
-/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/marvo
-sym/marvosym.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sym
-bols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symb
-ols/msam7.pfb>
-Output written on neo4j-training.pdf (58 pages, 802791 bytes).
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome/fontawesometwo.enc
+}{/usr/share/texlive/texmf-dist/fonts/enc/dvips/fontawesome/fontawesomethree.en
+c}</usr/share/texlive/texmf-dist/fonts/type1/public/fontawesome/FontAwesome.pfb
+></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/share
+/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/amsfonts/cm/cmss17.pfb></usr/share/texlive/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/share/texlive/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/share/texlive/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type
+1/public/amsfonts/cm/cmtt10.pfb></usr/share/texlive/texmf-dist/fonts/type1/publ
+ic/amsfonts/cm/cmtt12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/mar
+vosym/marvosym.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/s
+ymbols/msam10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/sy
+mbols/msam7.pfb>
+Output written on neo4j-training.pdf (61 pages, 806501 bytes).
 PDF statistics:
- 1714 PDF objects out of 1728 (max. 8388607)
- 1613 compressed objects within 17 object streams
- 131 named destinations out of 1000 (max. 500000)
+ 1789 PDF objects out of 2073 (max. 8388607)
+ 1685 compressed objects within 17 object streams
+ 135 named destinations out of 1000 (max. 500000)
  159 words of extra memory for PDF output out of 10000 (max. 10000000)
 

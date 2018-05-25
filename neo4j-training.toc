@@ -2,13 +2,13 @@
 \select@language {english}
 \beamer@sectionintoc {1}{What are graphs?}{4}{0}{1}
 \beamer@subsectionintoc {1}{1}{Definition}{4}{0}{1}
-\beamer@subsectionintoc {1}{2}{Use cases}{6}{0}{1}
-\beamer@sectionintoc {2}{Starting with Neo4j and Cypher}{15}{0}{2}
-\beamer@subsectionintoc {2}{1}{Configuration and start}{15}{0}{2}
-\beamer@subsectionintoc {2}{2}{CRUD operations with Cypher}{26}{0}{2}
-\beamer@sectionintoc {3}{Quering for paths and patterns}{32}{0}{3}
-\beamer@sectionintoc {4}{Using graph algorithms}{41}{0}{4}
-\beamer@subsectionintoc {4}{1}{apoc library}{42}{0}{4}
-\beamer@subsectionintoc {4}{2}{algo library}{46}{0}{4}
-\beamer@sectionintoc {5}{Importing data}{48}{0}{5}
-\beamer@sectionintoc {6}{Refactoring graph data model}{53}{0}{6}
+\beamer@subsectionintoc {1}{2}{Use cases}{7}{0}{1}
+\beamer@sectionintoc {2}{Starting with Neo4j and Cypher}{16}{0}{2}
+\beamer@subsectionintoc {2}{1}{Configuration and start}{16}{0}{2}
+\beamer@subsectionintoc {2}{2}{CRUD operations with Cypher}{27}{0}{2}
+\beamer@sectionintoc {3}{Quering for paths and patterns}{33}{0}{3}
+\beamer@sectionintoc {4}{Using graph algorithms}{42}{0}{4}
+\beamer@subsectionintoc {4}{1}{apoc library}{44}{0}{4}
+\beamer@subsectionintoc {4}{2}{algo library}{48}{0}{4}
+\beamer@sectionintoc {5}{Importing data}{51}{0}{5}
+\beamer@sectionintoc {6}{Refactoring graph data model}{56}{0}{6}

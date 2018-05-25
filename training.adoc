@@ -1,0 +1,459 @@
+
+= Querying graph data by example from genomics
+
+== Practice activity
+
+Please find two other learning partners, 
+* form a standing group and 
+* tell them what you already know about
+** graphs, 
+** Neo4j.
+
+== Graph Data - Modeling and Querying
+=== with Neo4j and Cypher
+
+== What are graphs?
+=== Definition
+    
+*Graph* is an ordered pair `G = (V,E)` comprising a set `V` of *vertices*, *nodes* or *points* together with a set `E` of *edges*, *arcs* or *lines*, which are 2-element subsets of `V`
+
+image::add-graph-image[float=right]
+
+
+== Use cases
+=== Networks
+
+* Social networks
+
+image::add-social-network-image
+
+* Computer networks
+
+image::add-computer-network-image
+
+
+== Use cases
+
+* Transport networks
+
+image::add-transport-network-image
+
+== Use cases
+=== Natural language processing
+
+image::add-nlp-image
+
+== Use cases
+=== Document management
+
+image::add-document-management-image
+
+== Practice activity
+
+Please work in groups of 3
+* create an example graph model from any use case you are interested in
+* use pen & paper for notes.
+
+== Use cases
+=== Biochemistry / Genomics
+
+image::add-biochemistry-image
+
+== Practice activity
+
+* Please separate in 4 groups:
+** Chemical
+** Disease
+** Organism
+** Gene
+* Go to (add the url of the ctdbase-neo4j instance)
+* Explore the dashboard in groups
+* What can you find out about your node type?
+* What questions arise? (Please make notes!)
+
+== Sandbox
+
+Please go to [link to neo4j sandbox] and create an empty Neo4j Sandbox instance.
+
+== Cypher CRUD operations
+
+=== Create a node
+
+[source,cypher]
+----
+create (c:Chemical {name:'Helium'}) return c
+----
+
+=== Update a node
+
+[source, cypher]
+----
+merge (c:Chemical {name:'Helium'}) set c.symbol = 'He' return c
+----
+
+== Cypher CRUD operations
+
+=== Delete a node without relationships
+
+[source, cypher]
+----
+match (c:Chemical {name:'Helium'}) delete c
+----
+
+=== Delete a node with existing relationships
+
+[source, cypher]
+----
+match (c:Chemical) where c.name = 'Helium' delete c
+----
+
+== Cypher CRUD operations
+
+=== Create a relationship between new nodes
+
+[source, cypher]
+----
+create (c:Chemical {name:'Helium'})-[:BELONGS_TO]->(g:ChemicalGroup {name:'Noble gases'}) return c, g
+----
+
+=== Create a relationship between existing nodes
+
+[source, cypher]
+----
+match (g:ChemicalGroup {groupName:'Noble gases'}),
+      (p:ChemicalGroup {groupName:'Gases'})
+      create (g)-[:HAS_PARENT]->(p) return g,p
+----
+
+== Cypher CRUD operations
+
+=== Update a relationship
+
+[source, cypher]
+----
+match ()-[r:BELONGS_TO]->()
+    set r.updateTyme = timestamp() return r
+----
+
+=== Delete a relationship
+
+[source, cypher]
+----
+match ()-[r:BELONGS_TO]->() delete r
+----
+
+== Practice activity
+
+* Go back to your graph model from the beginning of the training
+* Create about
+** 10 nodes and 
+** 15 relationships
+** with properties
+
+== Querying the data
+
+Log in to the ctdbase Neo4j instance (todo: provid credentials)
+
+=== Check the schema
+
+[source, cypher]
+----
+call db.schema
+----
+
+=== Check your indexes
+
+[source, cypher]
+----
+call db.indexes
+----
+
+=== Create and index
+[source, cypher]
+----
+create index on :Disease(diseaseId)
+----
+
+=== Create a compound index
+[source, cypher]
+----
+create index on :Gene(name, symbol)
+----
+
+== Querying the data
+
+=== Find a node by property
+[source, cypher]
+----
+match (g:Gene) where g.symbol = 'CTSD' return g
+----
+
+=== Find related nodes
+[source, cypher]
+----
+match (g:Gene)<-[:ASSOCIATED WITH]-(d:Disease)
+    where g.symbol = ’CTSD’ return g, d
+----
+
+=== How many diseases are associated with the CTSD gene?
+[source, cypher]
+----
+match (g:Gene)<-[:ASSOCIATED WITH]-(d:Disease)
+    where g.symbol = ’CTSD’ return g, count(d)
+----
+
+== Querying the data
+
+=== Which genes are associated with the most diseases?
+
+[source, cypher]
+----
+match (g:Gene)<-[:ASSOCIATED WITH]-(d:Disease)
+    with g, count(d) as diseases
+        where diseases > 50
+    return g.name, g.symbol, diseases
+        order by diseases desc
+----
+
+=== Which genes besides CTSD are associated with Osteoarthritis?
+
+[source, cypher]
+----
+match (g:Gene)<-[:ASSOCIATED WITH]-(d:Disease)-[:ASSOCIATED WITH]->(otherGene:Gene)
+    where g.symbol = ’CTSD’ and d.name = ’Osteoarthritis’
+    return otherGene.geneName, otherGene.geneSymbol
+----
+
+== Querying the data
+
+=== Get all chemicals connected via path of length 2 with 'Osteo'-diseases 
+[source, cypher]
+----
+match p = (c:Chemical)-[*2]-(d:Disease)
+    where d.name starts with ’Osteo’
+    return p limit 20
+----
+
+=== Which chemicals have most descendants on the third and fourth level?
+[source, cypher]
+----
+match (c:Chemical)<-[:HAS PARENT*3..4]-(d:Chemical)
+    with c, count(d) AS descendants,
+         collect(d.chemicalName) AS names
+    order by descendants desc limit 10
+    return c.chemicalName, names[1..10], descendants
+----
+
+== Querying the data
+
+=== Which connections exist between zinc acetate and the Alzheimer disease?
+[source, cypher]
+----
+match (c:Chemical) where c.name = ’Zinc Acetate’
+match (d:Disease) where d.name = ’Alzheimer Disease’
+    match p = (c)-[*1..3]-(d)
+    return p limit 20
+----
+
+=== Get the description of interactions influencing the cell degradation of the Chinese hamster
+[source, cypher]
+----
+match (:InteractionType {type:’degradation’})<-[:INCREASES|:DECREASES]-(i:Interaction)-[:APPLIES TO]->(:Organism {name:’Cricetulus griseus’})
+RETURN i.description
+----
+
+== Practice activity
+
+For each group (Chemical, Disease, Organism, Gene):
+* Please check your questions from the first practice activity.
+** Can you answer any of them now?
+* Think about new questions as you explore the graph with the querying techniques just learned.
+* Present one question, appropriate query and an answer to your peers.
+
+== Shortest paths
+
+=== Find connections between zinc acetate and heavy metals
+[source, cypher]
+----
+match (zinc:Chemical {name:’Zinc Acetate’}), (metals:Chemical {name:’Metals, Heavy’}),
+    p = shortestPath((zinc)-[*..15]-(metals)) return p
+----
+
+=== Excluding relationship types in path search 
+[source, cypher]
+----
+match (zinc:Chemical {name:’Zinc Acetate’}), (metals:Chemical {chemicalName:’Metals, Heavy’}),
+    p = shortestPath((zinc)-[*..15]-(metals))
+    where none(r in relationships(p) where type(r)=’CAUSES’) return p
+----
+
+== Shortest paths
+
+=== Find connections between zinc acetate and the Alzheimer disease
+[source, cypher]
+----
+match (c:Chemical {name:’Zinc Acetate’}), (d:Disease {diseaseName:’Alzheimer Disease’})
+match path = allShortestPaths( (c)-[*..3]-(d) ) return path
+----
+
+== Precedures & functions
+
+[source, cypher]
+----
+call db.schema
+----
+
+=== List all procedures
+[source, cypher]
+----
+call dbms.procedures
+----
+
+=== List all functions
+[source, cypher]
+----
+call dbms.functions
+----
+
+=== Getting help
+[source, cypher]
+----
+call apoc.help(’dijkstra’)
+----
+
+== Closeness centrality
+
+In a connected graph, the normalized *closeness centrality* of a
+node is the average length of the shortest path between the
+node and all other nodes in the graph. Thus the more central
+a node is, the closer it is to all other nodes.
+
+=== Which vitamins are higher connected to other vitamins? 
+[source, cypher]
+----
+match (node:Chemical) where node.name CONTAINS ’Vitamin’
+    with collect(node) AS nodes
+    call apoc.algo.closeness([’HAS_PARENT’],nodes,’BOTH’)
+    yield node, score 
+    return node, score order by score desc
+----
+
+== Betweenness centrality
+
+*Betweenness centrality* quantifies the number of times a node
+acts as a bridge along the shortest path between two other
+nodes.
+
+
+=== Which diseases appear in the 'middle' of the diseases ontology?
+[source, cypher]
+----
+match (node:Disease) where node.name CONTAINS ’deficiency’
+    with collect(node) AS nodes
+    call apoc.algo.betweenness([’HAS PARENT’],nodes,’BOTH’)
+    yield node, score
+    return node.diseaseName, score order by score desc limit 10
+----
+
+== Finding cliques
+
+In graph theory, a *clique* is a subset of vertices of an
+undirected graph such that every two distinct vertices in the
+clique are adjacent.
+
+=== Which nodes form a clique around the Endocrine system disease?
+[source, cypher]
+----
+match (startNode:Category {name:’Endocrine system disease’})
+    call apoc.algo.cliquesWithNode(startNode, 4) yield clique
+    return clique
+----
+
+== Practice activity
+
+Explore the APOC library
+* read the documentation
+* try out different queries
+* make notes about your questions and results
+
+== PageRank
+
+=== Which interacion types are mostly 'referenced' by each other?
+[source, cypher]
+----
+call algo.pageRank.stream(’InteractionType’, ’HAS_PARENT’, {iterations:20})
+    yield node, score
+    with * order by score desc limit 5
+    return node.type, node.code, score;
+----
+
+== Partitioning
+
+=== Partitioning into connected components
+[source, cypher]
+----
+call algo.unionFind(’InteractionType’, ’HAS PARENT’, write:true, partitionProperty:'partition')
+YIELD nodes, setCount, loadMillis, computeMillis, writeMillis
+----
+
+== Closeness centrality with ALGO library
+
+=== Calculating and persisting the closeness centrality of chemicals
+[source, cypher]
+----
+call algo.closeness(’Chemical’, ’HAS PARENT’, {write:true, writeProperty:’centrality’})
+    yield nodes, loadMillis, computeMillis, writeMillis
+----
+
+=== Get the most central nodes
+[source, cypher]
+----
+match (c:Chemical) where c.centrality > 200
+    return c.name, c.centrality
+    ordered by c.centrality desc limit 10
+----
+
+== Loading data
+
+=== View the data
+[source, cypher]
+----
+call apoc.load.csv('http://ctdbase.org/reports/CTD_Disease-GO_biological_process_associations.csv.gz',
+    {sep:",",skip:27,limit:5,header:false}) 
+    yield list
+----
+
+== Loading data
+
+=== Import the data
+
+[source, cypher]
+----
+call apoc.load.csv('http://ctdbase.org/reports/CTD_Disease-GO_biological_process_associations.csv.gz',
+    {sep:",",skip:29,limit:5,header:false}) 
+    yield list
+    with list[0] as DiseaseName, list[1] as DiseaseID, list[2] as GOName, list[3] as GOID, 
+         list[4] as InferenceGeneQty, list[5] as InferenceGeneSymbols
+    match (d:Disease) where last(split(d.diseaseID,’:’)) = DiseaseID
+    merge (b:BiologicalProcess {goid:GOID})
+        on create set b.goName = line.GOName
+    merge (b)<-[:AFFECTED BY {inferenceGeneQty:InferenceGeneQty, inferenceGeneSymbols:line.InferenceGeneSymbols}]-(d)
+----
+
+== Practice activity
+
+* Choose a dataset from http://ctdbase.org
+* Load it and view the head lines (~ 35 lines)
+* Import some of the columns of the first 15-20 lines and connect it to existing graph nodes.
+
+== References
+
+* Curated chemical–gene, chemical–disease and gene–disease interactions data were retrieved from the Comparative Toxicogenomics Database (CTD), 
+  MDI Biological Laboratory, Salisbury Cove, Maine, and NC State University, Raleigh, North Carolina. URL:http://ctdbase.org/.
+* Cypher Reference Card https://neo4j.com/docs/cypher-refcard/current/
+* APOC User Guide https://neo4j-contrib.github.io/neo4j-apoc-procedures/
+* Efficient Graph Algorithms in Neo4j https://neo4j.com/blog/efficient-graph-algorithms-neo4j/
+
+== Getting help
+
+Slack - neo4j.com/blog/public-neo4j-users-slack-group/

@@ -19,10 +19,10 @@
 \title{Graph Data - Modelling and Querying}
 \subtitle{with Neo4j and Cypher}
 \author[I.Feuerstein]{Iryna Feuerstein}
-\institute[Meetup]{Graph Database - NRW Meetup}
+\institute[Meetup]{Graph Database - Austria Meetup}
 \titlegraphic{\includegraphics[height=0.6cm]{pd_logo.png}}
 %\logo{\includegraphics[height=0.7cm]{logo.png}\vspace{230pt}}
-\date{6 December 2017}
+\date{3 March 2018}
 \setbeamertemplate{background}
 {\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{background.png}}
 \begin{document}
@@ -49,6 +49,10 @@
     
     \section{What are graphs?}
     \subsection{Definition}
+    
+    \begin{frame}{Graph}
+        Definition?
+    \end{frame}
     
     \begin{frame}
         \frametitle{Graph}
@@ -428,9 +432,9 @@
     \begin{frame}
         \frametitle{Live coding session}
         \begin{block}{Example}
-            MATCH p = (c:Chemical {chemicalName: 'Zinc Acetate'})\\
+            MATCH p = (c:Chemical \{chemicalName: 'Zinc Acetate'\})\\
             -[:ASSOCIATED\_WITH\(|\):CAUSES\(|\):INVOLVED\_IN*1..3]-\\
-            (d:Disease {diseaseName: 'Alzheimer Disease'})\\
+            (d:Disease \{diseaseName: 'Alzheimer Disease'\})\\
             \hspace{1cm} RETURN p LIMIT 10
         \end{block}
         \begin{block}{Example}
@@ -493,6 +497,17 @@
         \end{itemize}
     \end{frame}
     
+    \begin{frame}
+        \frametitle{About performance}
+        \begin{block}{Executing time consuming queries in parallel}
+            \begin{itemize}
+                \item apoc.periodic.iterate
+                \item apoc.periodic.commit
+            \end{itemize}
+            
+        \end{block}
+    \end{frame}
+    
     \subsection{apoc library}
     \begin{frame}
         \frametitle{Live coding session}
@@ -505,7 +520,7 @@
             \hspace{1cm} WITH collect(node) AS nodes\\
             CALL apoc.algo.closeness(['HAS\_PARENT'],nodes,'BOTH')\\
             \hspace{1cm} YIELD node, score\\
-            RETURN node, score\\
+            RETURN node.chemicalName, score\\
             \hspace{1cm} ORDER BY score DESC
         \end{block}
         \footnotetext{\url{en.wikipedia.org/wiki/Centrality\#Closeness_centrality}}
@@ -587,12 +602,13 @@
             \hspace{1cm} ORDER BY c.centrality DESC LIMIT 10
         \end{block}
     \end{frame}
+    
+    \frame{FINISH: PART THREE}
    
     \section{Importing data}
     \begin{frame}
         \frametitle{LOAD CSV}
         \begin{block}{View the data}
-            USING PERIODIC COMMIT 500\\
             LOAD CSV WITH HEADERS FROM "file:///.../\_Disease-GO\_biological\_process\_associations.csv" AS line\\
             RETURN line LIMIT 10
         \end{block}
@@ -608,7 +624,7 @@
             \hspace{1cm} AS line LIMIT 20\\
             MATCH (d:Disease)\\
             \hspace{1cm} WHERE last(split(d.diseaseID,':')) = line.DiseaseID\\ 
-            MERGE (b:BiologicalProcess {goid:line.GOID})\\
+            MERGE (b:BiologicalProcess \{goid:line.GOID\})\\
             \hspace{1cm} SET b.goName = line.GOName\\
             MERGE (b)\textless-[:AFFECTED\_BY\\
             \hspace{2cm} \{inferenceGeneQty:line.InferenceGeneQty,\\
@@ -621,8 +637,7 @@
         
         \begin{block}{View the data}
         CALL apoc.load.csv(\\
-        \hspace{1cm}'file:///.../CTD\_chem\_go\_enriched.csv',\\
-        {})\\
+        \hspace{1cm}'file:///.../CTD\_chem\_go\_enriched.csv',\{\})\\
         YIELD lineNo, map AS line RETURN lineNo, line limit 5
         \end{block}
         \footnotetext{\url{http://ctdbase.org/}}
@@ -714,7 +729,7 @@
             \includegraphics[height=3cm]{cricetulus2.png}
             \item Find some interesting information about it in the database.
             \item Tweet to me a piece of information with the hashtag \url{\#cricetulus}.
-            \item Get a coffe mug for an interesting tweet!
+            \item Get a coffee mug for an interesting tweet!
         \end{itemize}
     \end{frame}
     
